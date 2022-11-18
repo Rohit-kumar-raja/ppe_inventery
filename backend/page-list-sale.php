@@ -1,4 +1,4 @@
-<?php include "../foot.php" ?>
+<?php include "../head.php" ?>
 <div class="content-page">
     <div class="container-fluid">
         <div class="row">
@@ -9,7 +9,7 @@
                         <p class="mb-0">Sales enables you to effectively control sales KPIs and monitor them in one central<br>
                             place while helping teams to reach sales goals. </p>
                     </div>
-                    <a href="page-add-sale.html" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Sale</a>
+                    <a href="page-add-sale.php" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Sale</a>
                 </div>
             </div>
             <div class="col-lg-12">

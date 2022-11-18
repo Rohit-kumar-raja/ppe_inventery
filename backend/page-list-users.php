@@ -9,7 +9,7 @@
                         <p class="mb-0">A dashboard provides you an overview of user list with access to the most important data,<br>
                             functions and controls. </p>
                     </div>
-                    <a href="page-add-users.html" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add User</a>
+                    <a href="page-add-users.php" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add User</a>
                 </div>
             </div>
             <div class="col-lg-12">

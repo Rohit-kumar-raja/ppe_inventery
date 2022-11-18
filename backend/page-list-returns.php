@@ -9,7 +9,7 @@
                         <p class="mb-0">Returns dashboard shows the graphical representation of the channel
                             and Reference <br>wise returns with the comparison to the total units sold..</p>
                     </div>
-                    <a href="page-add-return.html" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Returns</a>
+                    <a href="page-add-return.php" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Returns</a>
                 </div>
             </div>
             <div class="col-lg-12">

@@ -26,7 +26,7 @@
       
       <div class="iq-sidebar  sidebar-default ">
           <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
-              <a href="../backend/index.html" class="header-logo">
+              <a href="../backend/index.php" class="header-logo">
                   <img src="../assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo"><h5 class="logo-title light-logo ml-3">POSDash</h5>
               </a>
               <div class="iq-menu-bt-sidebar ml-0">
@@ -37,7 +37,7 @@
               <nav class="iq-sidebar-menu">
                   <ul id="iq-sidebar-toggle" class="iq-menu">
                       <li class="">
-                          <a href="../backend/index.html" class="svg-icon">                        
+                          <a href="../backend/index.php" class="svg-icon">                        
                               <svg  class="svg-icon" id="p-dash1" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                   <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line>
                               </svg>
@@ -56,12 +56,12 @@
                           </a>
                           <ul id="product" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                               <li class="">
-                                  <a href="../backend/page-list-product.html">
+                                  <a href="../backend/page-list-product.php">
                                       <i class="las la-minus"></i><span>List Product</span>
                                   </a>
                               </li>
                               <li class="">
-                                  <a href="../backend/page-add-product.html">
+                                  <a href="../backend/page-add-product.php">
                                       <i class="las la-minus"></i><span>Add Product</span>
                                   </a>
                               </li>
@@ -79,12 +79,12 @@
                           </a>
                           <ul id="category" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                                   <li class="">
-                                          <a href="../backend/page-list-category.html">
+                                          <a href="../backend/page-list-category.php">
                                               <i class="las la-minus"></i><span>List Category</span>
                                           </a>
                                   </li>
                                   <li class="">
-                                          <a href="../backend/page-add-category.html">
+                                          <a href="../backend/page-add-category.php">
                                               <i class="las la-minus"></i><span>Add Category</span>
                                           </a>
                                   </li>
@@ -102,12 +102,12 @@
                           </a>
                           <ul id="sale" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                                   <li class="">
-                                          <a href="../backend/page-list-sale.html">
+                                          <a href="../backend/page-list-sale.php">
                                               <i class="las la-minus"></i><span>List Sale</span>
                                           </a>
                                   </li>
                                   <li class="">
-                                          <a href="../backend/page-add-sale.html">
+                                          <a href="../backend/page-add-sale.php">
                                               <i class="las la-minus"></i><span>Add Sale</span>
                                           </a>
                                   </li>
@@ -125,12 +125,12 @@
                           </a>
                           <ul id="purchase" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                                   <li class="">
-                                          <a href="../backend/page-list-purchase.html">
+                                          <a href="../backend/page-list-purchase.php">
                                               <i class="las la-minus"></i><span>List Purchases</span>
                                           </a>
                                   </li>
                                   <li class="">
-                                          <a href="../backend/page-add-purchase.html">
+                                          <a href="../backend/page-add-purchase.php">
                                               <i class="las la-minus"></i><span>Add purchase</span>
                                           </a>
                                   </li>
@@ -148,12 +148,12 @@
                           </a>
                           <ul id="return" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                                   <li class="">
-                                          <a href="../backend/page-list-returns.html">
+                                          <a href="../backend/page-list-returns.php">
                                               <i class="las la-minus"></i><span>List Returns</span>
                                           </a>
                                   </li>
                                   <li class="">
-                                          <a href="../backend/page-add-return.html">
+                                          <a href="../backend/page-add-return.php">
                                               <i class="las la-minus"></i><span>Add Return</span>
                                           </a>
                                   </li>
@@ -171,39 +171,39 @@
                           </a>
                           <ul id="people" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                                   <li class="">
-                                          <a href="../backend/page-list-customers.html">
+                                          <a href="../backend/page-list-customers.php">
                                               <i class="las la-minus"></i><span>Customers</span>
                                           </a>
                                   </li>
                                   <li class="">
-                                          <a href="../backend/page-add-customers.html">
+                                          <a href="../backend/page-add-customers.php">
                                               <i class="las la-minus"></i><span>Add Customers</span>
                                           </a>
                                   </li>
                                   <li class="">
-                                          <a href="../backend/page-list-users.html">
+                                          <a href="../backend/page-list-users.php">
                                               <i class="las la-minus"></i><span>Users</span>
                                           </a>
                                   </li>
                                   <li class="">
-                                          <a href="../backend/page-add-users.html">
+                                          <a href="../backend/page-add-users.php">
                                               <i class="las la-minus"></i><span>Add Users</span>
                                           </a>
                                   </li>
                                   <li class="">
-                                          <a href="../backend/page-list-suppliers.html">
+                                          <a href="../backend/page-list-suppliers.php">
                                               <i class="las la-minus"></i><span>Suppliers</span>
                                           </a>
                                   </li>
                                   <li class="">
-                                          <a href="../backend/page-add-supplier.html">
+                                          <a href="../backend/page-add-supplier.php">
                                               <i class="las la-minus"></i><span>Add Suppliers</span>
                                           </a>
                                   </li>
                           </ul>
                       </li>
                       <li class="">
-                          <a href="../backend/page-report.html" class="">
+                          <a href="../backend/page-report.php" class="">
                               <svg class="svg-icon" id="p-dash7" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline>
                               </svg>
@@ -235,17 +235,17 @@
                                       </a>
                                       <ul id="user" class="iq-submenu collapse" data-parent="#otherpage">
                                               <li class="">
-                                                  <a href="../app/user-profile.html">
+                                                  <a href="../app/user-profile.php">
                                                       <i class="las la-minus"></i><span>User Profile</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../app/user-add.html">
+                                                  <a href="../app/user-add.php">
                                                       <i class="las la-minus"></i><span>User Add</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../app/user-list.html">
+                                                  <a href="../app/user-list.php">
                                                       <i class="las la-minus"></i><span>User List</span>
                                                   </a>
                                               </li>
@@ -263,122 +263,122 @@
                                       </a>
                                       <ul id="ui" class="iq-submenu collapse" data-parent="#otherpage">
                                               <li class="">
-                                                  <a href="../backend/ui-avatars.html">
+                                                  <a href="../backend/ui-avatars.php">
                                                       <i class="las la-minus"></i><span>Avatars</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-alerts.html">
+                                                  <a href="../backend/ui-alerts.php">
                                                       <i class="las la-minus"></i><span>Alerts</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-badges.html">
+                                                  <a href="../backend/ui-badges.php">
                                                       <i class="las la-minus"></i><span>Badges</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-breadcrumb.html">
+                                                  <a href="../backend/ui-breadcrumb.php">
                                                       <i class="las la-minus"></i><span>Breadcrumb</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-buttons.html">
+                                                  <a href="../backend/ui-buttons.php">
                                                       <i class="las la-minus"></i><span>Buttons</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-buttons-group.html">
+                                                  <a href="../backend/ui-buttons-group.php">
                                                       <i class="las la-minus"></i><span>Buttons Group</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-boxshadow.html">
+                                                  <a href="../backend/ui-boxshadow.php">
                                                       <i class="las la-minus"></i><span>Box Shadow</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-colors.html">
+                                                  <a href="../backend/ui-colors.php">
                                                       <i class="las la-minus"></i><span>Colors</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-cards.html">
+                                                  <a href="../backend/ui-cards.php">
                                                       <i class="las la-minus"></i><span>Cards</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-carousel.html">
+                                                  <a href="../backend/ui-carousel.php">
                                                       <i class="las la-minus"></i><span>Carousel</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-grid.html">
+                                                  <a href="../backend/ui-grid.php">
                                                       <i class="las la-minus"></i><span>Grid</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-helper-classes.html">
+                                                  <a href="../backend/ui-helper-classes.php">
                                                       <i class="las la-minus"></i><span>Helper classes</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-images.html">
+                                                  <a href="../backend/ui-images.php">
                                                       <i class="las la-minus"></i><span>Images</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-list-group.html">
+                                                  <a href="../backend/ui-list-group.php">
                                                       <i class="las la-minus"></i><span>list Group</span>
                                                   </a>
                                               </li>
                                               <li  class="">
-                                                  <a href="../backend/ui-media-object.html">
+                                                  <a href="../backend/ui-media-object.php">
                                                       <i class="las la-minus"></i><span>Media</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-modal.html">
+                                                  <a href="../backend/ui-modal.php">
                                                       <i class="las la-minus"></i><span>Modal</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-notifications.html">
+                                                  <a href="../backend/ui-notifications.php">
                                                       <i class="las la-minus"></i><span>Notifications</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-pagination.html">
+                                                  <a href="../backend/ui-pagination.php">
                                                       <i class="las la-minus"></i><span>Pagination</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-popovers.html">
+                                                  <a href="../backend/ui-popovers.php">
                                                       <i class="las la-minus"></i><span>Popovers</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-progressbars.html">
+                                                  <a href="../backend/ui-progressbars.php">
                                                       <i class="las la-minus"></i><span>Progressbars</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-typography.html">
+                                                  <a href="../backend/ui-typography.php">
                                                       <i class="las la-minus"></i><span>Typography</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-tabs.html">
+                                                  <a href="../backend/ui-tabs.php">
                                                       <i class="las la-minus"></i><span>Tabs</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-tooltips.html">
+                                                  <a href="../backend/ui-tooltips.php">
                                                       <i class="las la-minus"></i><span>Tooltips</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/ui-embed-video.html">
+                                                  <a href="../backend/ui-embed-video.php">
                                                       <i class="las la-minus"></i><span>Video</span>
                                                   </a>
                                               </li>
@@ -396,27 +396,27 @@
                                       </a>
                                       <ul id="auth" class="iq-submenu collapse" data-parent="#otherpage">
                                               <li class="">
-                                                  <a href="../backend/auth-sign-in.html">
+                                                  <a href="../backend/auth-sign-in.php">
                                                       <i class="las la-minus"></i><span>Login</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/auth-sign-up.html">
+                                                  <a href="../backend/auth-sign-up.php">
                                                       <i class="las la-minus"></i><span>Register</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/auth-recoverpw.html">
+                                                  <a href="../backend/auth-recoverpw.php">
                                                       <i class="las la-minus"></i><span>Recover Password</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/auth-confirm-mail.html">
+                                                  <a href="../backend/auth-confirm-mail.php">
                                                       <i class="las la-minus"></i><span>Confirm Mail</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/auth-lock-screen.html">
+                                                  <a href="../backend/auth-lock-screen.php">
                                                       <i class="las la-minus"></i><span>Lock Screen</span>
                                                   </a>
                                               </li>
@@ -434,37 +434,37 @@
                                       </a>
                                       <ul id="form" class="iq-submenu collapse" data-parent="#otherpage">
                                           <li class="">
-                                              <a href="../backend/form-layout.html">
+                                              <a href="../backend/form-layout.php">
                                                   <i class="las la-minus"></i><span class="">Form Elements</span>
                                               </a>
                                           </li>
                                           <li class="">
-                                              <a href="../backend/form-input-group.html" class="svg-icon">
+                                              <a href="../backend/form-input-group.php" class="svg-icon">
                                                  <i class="las la-minus"></i><span class="">Form Input</span>
                                               </a>
                                           </li>
                                           <li class="active">
-                                              <a href="../backend/form-validation.html" class="svg-icon">
+                                              <a href="../backend/form-validation.php" class="svg-icon">
                                                   <i class="las la-minus"></i><span class="">Form Validation</span>
                                               </a>
                                           </li>
                                           <li class="">
-                                              <a href="../backend/form-switch.html" class="svg-icon">
+                                              <a href="../backend/form-switch.php" class="svg-icon">
                                                   <i class="las la-minus"></i><span class="">Form Switch</span>
                                               </a>
                                           </li>
                                           <li class="">
-                                              <a href="../backend/form-chechbox.html" class="svg-icon">
+                                              <a href="../backend/form-chechbox.php" class="svg-icon">
                                                   <i class="las la-minus"></i><span class="">Form Checkbox</span>
                                               </a>
                                           </li>
                                           <li class="">
-                                              <a href="../backend/form-radio.html" class="svg-icon">
+                                              <a href="../backend/form-radio.php" class="svg-icon">
                                                   <i class="las la-minus"></i><span class="">Form Radio</span>
                                               </a>
                                           </li>
                                           <li class="">
-                                              <a href="../backend/form-textarea.html" class="svg-icon">
+                                              <a href="../backend/form-textarea.php" class="svg-icon">
                                                   <i class="las la-minus"></i><span class="">Form Textarea</span>
                                               </a>
                                           </li>
@@ -482,17 +482,17 @@
                                       </a>
                                       <ul id="table" class="iq-submenu collapse" data-parent="#otherpage">
                                               <li class="">
-                                                  <a href="../backend/tables-basic.html">
+                                                  <a href="../backend/tables-basic.php">
                                                       <i class="las la-minus"></i><span>Basic Tables</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/table-data.html">
+                                                  <a href="../backend/table-data.php">
                                                       <i class="las la-minus"></i><span>Data Table</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/table-tree.html">
+                                                  <a href="../backend/table-tree.php">
                                                       <i class="las la-minus"></i><span>Table Tree</span>
                                                   </a>
                                               </li>
@@ -510,19 +510,19 @@
                                       </a>
                                       <ul id="pricing" class="iq-submenu collapse" data-parent="#otherpage">
                                               <li class="">
-                                                  <a href="../backend/pricing.html">
+                                                  <a href="../backend/pricing.php">
                                                       <i class="las la-minus"></i><span>Pricing 1</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/pricing-2.html">
+                                                  <a href="../backend/pricing-2.php">
                                                       <i class="las la-minus"></i><span>Pricing 2</span>
                                                   </a>
                                               </li>
                                       </ul>
                                   </li>
                                   <li class="">
-                                      <a href="../backend/pages-invoice.html" class="svg-icon">
+                                      <a href="../backend/pages-invoice.php" class="svg-icon">
                                           <svg class="svg-icon" id="p-dash07" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline>
                                           </svg>
@@ -541,19 +541,19 @@
                                       </a>
                                       <ul id="pages-error" class="iq-submenu collapse" data-parent="#otherpage">
                                               <li class="">
-                                                  <a href="../backend/pages-error.html">
+                                                  <a href="../backend/pages-error.php">
                                                       <i class="las la-minus"></i><span>Error 404</span>
                                                   </a>
                                               </li>
                                               <li class="">
-                                                  <a href="../backend/pages-error-500.html">
+                                                  <a href="../backend/pages-error-500.php">
                                                       <i class="las la-minus"></i><span>Error 500</span>
                                                   </a>
                                               </li>
                                       </ul>
                                   </li>
                                   <li class="">
-                                          <a href="../backend/pages-blank-page.html">
+                                          <a href="../backend/pages-blank-page.php">
                                               <svg class="svg-icon" id="p-dash18" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                   <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
                                               </svg>
@@ -561,7 +561,7 @@
                                           </a>
                                   </li>
                                   <li class="">
-                                          <a href="../backend/pages-maintenance.html">
+                                          <a href="../backend/pages-maintenance.php">
                                               <svg class="svg-icon" id="p-dash19" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                   <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
                                               </svg>
@@ -590,7 +590,7 @@
               <nav class="navbar navbar-expand-lg navbar-light p-0">
                   <div class="iq-navbar-logo d-flex align-items-center justify-content-between">
                       <i class="ri-menu-line wrapper-menu"></i>
-                      <a href="../backend/index.html" class="header-logo">
+                      <a href="../backend/index.php" class="header-logo">
                           <img src="../assets/images/logo.png" class="img-fluid rounded-normal" alt="logo">
                           <h5 class="logo-title ml-3">POSDash</h5>
       
@@ -829,8 +829,8 @@
                                                   <h5 class="mb-1">JoanDuo@property.com</h5>
                                                   <p class="mb-0">Since 10 march, 2020</p>
                                                   <div class="d-flex align-items-center justify-content-center mt-3">
-                                                      <a href="../app/user-profile.html" class="btn border mr-2">Profile</a>
-                                                      <a href="auth-sign-in.html" class="btn border">Sign Out</a>
+                                                      <a href="../app/user-profile.php" class="btn border mr-2">Profile</a>
+                                                      <a href="auth-sign-in.php" class="btn border">Sign Out</a>
                                                   </div>
                                               </div>
                                           </div>
@@ -1129,8 +1129,8 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <ul class="list-inline mb-0">
-                                <li class="list-inline-item"><a href="../backend/privacy-policy.html">Privacy Policy</a></li>
-                                <li class="list-inline-item"><a href="../backend/terms-of-service.html">Terms of Use</a></li>
+                                <li class="list-inline-item"><a href="../backend/privacy-policy.php">Privacy Policy</a></li>
+                                <li class="list-inline-item"><a href="../backend/terms-of-service.php">Terms of Use</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-6 text-right">

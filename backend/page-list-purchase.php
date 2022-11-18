@@ -9,7 +9,7 @@
                         <p class="mb-0">A purchase dashboard enables purchasing manager to efficiently track, evaluate, <br>
                             and optimize all acquisition processes within a company.</p>
                     </div>
-                    <a href="page-add-purchase.html" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Purchase</a>
+                    <a href="page-add-purchase.php" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Purchase</a>
                 </div>
             </div>
             <div class="col-lg-12">

@@ -10,7 +10,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <form action="page-list-category.html" data-toggle="validator">
+                                <form action="page-list-category.php" data-toggle="validator">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
