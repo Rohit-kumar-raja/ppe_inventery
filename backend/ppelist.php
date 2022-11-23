@@ -7,10 +7,10 @@
             <div class="col-lg-12">
                 <div class="d-flex flex-wrap flex-wrap align-items-center justify-content-between mb-4">
                     <div>
-                        <h4 class="mb-3">Admin  List</h4>
-                        <p class="mb-0">The Admin  list effectively dictates Admin  presentation and provides space<br> to list your Admin s and offering in the most appealing way.</p>
+                        <h4 class="mb-3">PPE  List</h4>
+                        <p class="mb-0">The PPE  list effectively dictates PPE  presentation and provides space<br> to list your PPE s and offering in the most appealing way.</p>
                     </div>
-                    <a href="page-add-product.php" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Admin </a>
+                    <a href="page-add-product.php" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add PPE </a>
                 </div>
             </div>
             <div class="col-lg-12">
@@ -24,18 +24,18 @@
                                         <label for="checkbox1" class="mb-0"></label>
                                     </div>
                                 </th>
-                                <th>Admin Name </th>
-                                <th>User Id</th>
+                                <th>PPE Name </th>
+                                <!-- <th>User Id</th>
                                 <th>Area</th>
                                 <th>Store</th>
                                 <th>Type</th>
                                 <th>email Id</th>
                                 <th>Phone</th>
-                                <th>Address</th>
+                                <th>Address</th> -->
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody class="ligth-body">
+                        <!-- <tbody class="ligth-body">
                             <tr>
                                 <td>
                                     <div class="checkbox d-inline-block">
@@ -48,15 +48,15 @@
                                         <img src="../assets/images/table/product/01.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image">
                                         <div>
                                             Organic Cream
-                                            <p class="mb-0"><small>This is test Admin </small></p>
+                                            <p class="mb-0"><small>This is test PPE </small></p>
                                         </div>
                                     </div>
                                 </td>
                                 <td>CREM01</td>
                                 <td>Mango</td>
                                 <td>Manago</td>
-                                <td>SuperAdmin</td>
-                                <td>Admin@gmail.com</td>
+                                <td>SuperPPE</td>
+                                <td>PPE@gmail.com</td>
                                 <td>9999999999</td>
                                 <td>Jamshedpur</td>
 
@@ -80,15 +80,15 @@
                                         <img src="../assets/images/table/product/01.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image">
                                         <div>
                                             Organic Cream
-                                            <p class="mb-0"><small>This is test Admin </small></p>
+                                            <p class="mb-0"><small>This is test PPE </small></p>
                                         </div>
                                     </div>
                                 </td>
                                 <td>CREM01</td>
                                 <td>Mango</td>
                                 <td>Manago</td>
-                                <td>Admin</td>
-                                <td>Admin@gmail.com</td>
+                                <td>PPE</td>
+                                <td>PPE@gmail.com</td>
                                 <td>9999999999</td>
                                 <td>Jamshedpur</td>
 
@@ -112,15 +112,15 @@
                                         <img src="../assets/images/table/product/01.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image">
                                         <div>
                                             Organic Cream
-                                            <p class="mb-0"><small>This is test Admin </small></p>
+                                            <p class="mb-0"><small>This is test PPE </small></p>
                                         </div>
                                     </div>
                                 </td>
                                 <td>CREM01</td>
                                 <td>Mango</td>
                                 <td>Manago</td>
-                                <td>SubAdmin</td>
-                                <td>Admin@gmail.com</td>
+                                <td>SubPPE</td>
+                                <td>PPE@gmail.com</td>
                                 <td>9999999999</td>
                                 <td>Jamshedpur</td>
 
@@ -133,7 +133,7 @@
                                 </td>
                             </tr>
                            
-                        </tbody>
+                        </tbody> -->
                     </table>
                 </div>
             </div>

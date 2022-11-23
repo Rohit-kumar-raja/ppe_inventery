@@ -34,17 +34,17 @@
                     </a>
                     <ul id="setup" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="active">
-                            <a href="../backend/page-list-sale.php">
+                            <a href="../backend/company.php">
                                 <i class="las la-minus"></i><span>Company Profile</span>
                             </a>
                         </li>
                         <li class="">
-                            <a href="../backend/page-add-sale.php">
+                            <a href="../backend/store.php">
                                 <i class="las la-minus"></i><span>Store</span>
                             </a>
                         </li>
                         <li class="">
-                            <a href="../backend/page-add-sale.php">
+                            <a href="../backend/area.php">
                                 <i class="las la-minus"></i><span>Area</span>
                             </a>
                         </li>
@@ -97,7 +97,7 @@
                             </a>
                         </li>
                         <li class="">
-                            <a href="../backend/page-add-product.php">
+                            <a href="../backend/ppelist.php">
                                 <i class="las la-minus"></i><span>List PPE</span>
                             </a>
                         </li>
@@ -262,7 +262,7 @@
                 <li class=" ">
                     <a href="#message" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <i class="fas fa-comment-dots"></i>
-                        <span class="ml-4">Complaint</span>
+                        <span class="ml-4">Feedback</span>
 
                         <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="10 15 15 20 20 15"></polyline>
@@ -272,8 +272,8 @@
                     </a>
                     <ul id="message" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
-                            <a href="../backend/page-list-category.php">
-                                <i class="las la-minus"></i><span>View Complaint</span>
+                            <a href="../backend/feedback.php">
+                                <i class="las la-minus"></i><span>View feedback</span>
                             </a>
                         </li>
 

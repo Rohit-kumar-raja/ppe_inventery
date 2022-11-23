@@ -5,7 +5,7 @@
             <div class="col-lg-12">
                 <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                     <div>
-                        <h4 class="mb-3">Suppliers List</h4>
+                        <h4 class="mb-3">Workers List</h4>
                         <p class="mb-0">Create and manage your vendor list, send and receive purchase orders – your online<br>
                             Dashboard is your new back of house.</p>
                     </div>

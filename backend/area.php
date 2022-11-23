@@ -5,11 +5,11 @@
             <div class="col-lg-12">
                 <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
                     <div>
-                        <h4 class="mb-3">Supervioser List</h4>
-                        <p class="mb-0">A Supervioser dashboard lets you easily gather and visualize Supervioser data from optimizing <br>
-                            the Supervioser experience, ensuring Supervioser retention. </p>
+                        <h4 class="mb-3">Area List</h4>
+                        <p class="mb-0">Use Area list as to describe your overall core business from the provided list. <br>
+                            Click the name of the Area where you want to add a list item. .</p>
                     </div>
-                    <a href="page-add-customers.php" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Supervioser</a>
+                    <a href="page-add-Area.php" class="btn btn-primary add-list"><i class="las la-plus mr-3"></i>Add Area</a>
                 </div>
             </div>
             <div class="col-lg-12">
@@ -23,13 +23,9 @@
                                         <label for="checkbox1" class="mb-0"></label>
                                     </div>
                                 </th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone No.</th>
-                                <th>Country</th>
-                                <th>Order</th>
-                                <th>Status</th>
-                                <th>Last Order</th>
+                                <th>Area Name</th>
+                                <th>Code</th>
+                                <th>Address</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -41,15 +37,17 @@
                                         <label for="checkbox2" class="mb-0"></label>
                                     </div>
                                 </td>
-                                <td>Max Conversion</td>
-                                <td>max@gmail.com</td>
-                                <td>0123456789</td>
-                                <td>USA</td>
-                                <td>2</td>
                                 <td>
-                                    <div class="badge badge-warning">Pending</div>
+                                    <div class="d-flex align-items-center">
+                                        <!-- <img src="../assets/images/table/product/01.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image"> -->
+                                        <div>
+                                            Organic Cream
+                                            <p class="mb-0"><small>This is test Product</small></p>
+                                        </div>
+                                    </div>
                                 </td>
-                                <td>1</td>
+                                <td>CREM01</td>
+                                <td>Beauty</td>
                                 <td>
                                     <div class="d-flex align-items-center list-action">
                                         <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="#"><i class="ri-eye-line mr-0"></i></a>
@@ -65,15 +63,17 @@
                                         <label for="checkbox3" class="mb-0"></label>
                                     </div>
                                 </td>
-                                <td>Alex john</td>
-                                <td>alex@gmail.com</td>
-                                <td>0123456123</td>
-                                <td>USA</td>
-                                <td>3</td>
                                 <td>
-                                    <div class="badge badge-warning">Pending</div>
+                                    <div class="d-flex align-items-center">
+                                        <!-- <img src="../assets/images/table/product/02.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image"> -->
+                                        <div>
+                                            Rain Umbrella
+                                            <p class="mb-0"><small>This is test Product</small></p>
+                                        </div>
+                                    </div>
                                 </td>
-                                <td>2</td>
+                                <td>UM01</td>
+                                <td>Grocery</td>
                                 <td>
                                     <div class="d-flex align-items-center list-action">
                                         <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="#"><i class="ri-eye-line mr-0"></i></a>
@@ -89,15 +89,17 @@
                                         <label for="checkbox4" class="mb-0"></label>
                                     </div>
                                 </td>
-                                <td>Cliff Hanger</td>
-                                <td>cliff@gmail.com</td>
-                                <td>0189556789</td>
-                                <td>UK</td>
-                                <td>3</td>
                                 <td>
-                                    <div class="badge badge-warning">Pending</div>
+                                    <div class="d-flex align-items-center">
+                                        <!-- <img src="../assets/images/table/product/03.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image"> -->
+                                        <div>
+                                            Serum Bottle
+                                            <p class="mb-0"><small>This is test Product</small></p>
+                                        </div>
+                                    </div>
                                 </td>
-                                <td>3</td>
+                                <td>SEM01</td>
+                                <td>Beauty</td>
                                 <td>
                                     <div class="d-flex align-items-center list-action">
                                         <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="#"><i class="ri-eye-line mr-0"></i></a>
@@ -113,15 +115,17 @@
                                         <label for="checkbox5" class="mb-0"></label>
                                     </div>
                                 </td>
-                                <td>Terry Aki</td>
-                                <td>terry@gmail.com</td>
-                                <td>0123205789</td>
-                                <td>USA</td>
-                                <td>2</td>
                                 <td>
-                                    <div class="badge badge-warning">Pending</div>
+                                    <div class="d-flex align-items-center">
+                                        <!-- <img src="../assets/images/table/product/04.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image"> -->
+                                        <div>
+                                            Coffee Beans
+                                            <p class="mb-0"><small>This is test Product</small></p>
+                                        </div>
+                                    </div>
                                 </td>
-                                <td>2</td>
+                                <td>COF01</td>
+                                <td>Food</td>
                                 <td>
                                     <div class="d-flex align-items-center list-action">
                                         <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="#"><i class="ri-eye-line mr-0"></i></a>
@@ -137,15 +141,17 @@
                                         <label for="checkbox6" class="mb-0"></label>
                                     </div>
                                 </td>
-                                <td>Rock lai</td>
-                                <td>rock@gmail.com</td>
-                                <td>0123452289</td>
-                                <td>UK</td>
-                                <td>3</td>
                                 <td>
-                                    <div class="badge badge-warning">Pending</div>
+                                    <div class="d-flex align-items-center">
+                                        <!-- <img src="../assets/images/table/product/05.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image"> -->
+                                        <div>
+                                            Book Shelves
+                                            <p class="mb-0"><small>This is test Product</small></p>
+                                        </div>
+                                    </div>
                                 </td>
-                                <td>1</td>
+                                <td>FUN01</td>
+                                <td>Furniture</td>
                                 <td>
                                     <div class="d-flex align-items-center list-action">
                                         <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="#"><i class="ri-eye-line mr-0"></i></a>
@@ -161,15 +167,17 @@
                                         <label for="checkbox7" class="mb-0"></label>
                                     </div>
                                 </td>
-                                <td>Pete Sariya</td>
-                                <td>pete@gmail.com</td>
-                                <td>0111456789</td>
-                                <td>USA</td>
-                                <td>5</td>
                                 <td>
-                                    <div class="badge badge-warning">Pending</div>
+                                    <div class="d-flex align-items-center">
+                                        <!-- <img src="../assets/images/table/product/06.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image"> -->
+                                        <div>
+                                            Dinner Set
+                                            <p class="mb-0"><small>This is test Product</small></p>
+                                        </div>
+                                    </div>
                                 </td>
-                                <td>4</td>
+                                <td>DIS01</td>
+                                <td>Grocery</td>
                                 <td>
                                     <div class="d-flex align-items-center list-action">
                                         <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="#"><i class="ri-eye-line mr-0"></i></a>
@@ -185,15 +193,17 @@
                                         <label for="checkbox8" class="mb-0"></label>
                                     </div>
                                 </td>
-                                <td>Ira Membrit</td>
-                                <td>ira@gmail.com</td>
-                                <td>0123458719</td>
-                                <td>UK</td>
-                                <td>4</td>
                                 <td>
-                                    <div class="badge badge-warning">Pending</div>
+                                    <div class="d-flex align-items-center">
+                                        <!-- <img src="../assets/images/table/product/07.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image"> -->
+                                        <div>
+                                            Nike Shoes
+                                            <p class="mb-0"><small>This is test Product</small></p>
+                                        </div>
+                                    </div>
                                 </td>
-                                <td>2</td>
+                                <td>NIS01</td>
+                                <td>Shoes</td>
                                 <td>
                                     <div class="d-flex align-items-center list-action">
                                         <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="#"><i class="ri-eye-line mr-0"></i></a>
@@ -209,15 +219,17 @@
                                         <label for="checkbox9" class="mb-0"></label>
                                     </div>
                                 </td>
-                                <td>Barb Ackue</td>
-                                <td>barb@gmail.com</td>
-                                <td>0123246789</td>
-                                <td>USA</td>
-                                <td>2</td>
                                 <td>
-                                    <div class="badge badge-warning">Pending</div>
+                                    <div class="d-flex align-items-center">
+                                        <!-- <img src="../assets/images/table/product/08.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image"> -->
+                                        <div>
+                                            Computer Glasses
+                                            <p class="mb-0"><small>This is test Product</small></p>
+                                        </div>
+                                    </div>
                                 </td>
-                                <td>2</td>
+                                <td>COG01</td>
+                                <td>Frames</td>
                                 <td>
                                     <div class="d-flex align-items-center list-action">
                                         <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="#"><i class="ri-eye-line mr-0"></i></a>
@@ -233,15 +245,17 @@
                                         <label for="checkbox10" class="mb-0"></label>
                                     </div>
                                 </td>
-                                <td>Paige Turner</td>
-                                <td>paige@gmail.com</td>
-                                <td>0125856789</td>
-                                <td>UK</td>
-                                <td>9</td>
                                 <td>
-                                    <div class="badge badge-warning">Pending</div>
+                                    <div class="d-flex align-items-center">
+                                        <!-- <img src="../assets/images/table/product/09.jpg" class="img-fluid rounded avatar-50 mr-3" alt="image"> -->
+                                        <div>
+                                            Alloy Jewel Set
+                                            <p class="mb-0"><small>This is test Product</small></p>
+                                        </div>
+                                    </div>
                                 </td>
-                                <td>7</td>
+                                <td>AJS01</td>
+                                <td>Jewellery</td>
                                 <td>
                                     <div class="d-flex align-items-center list-action">
                                         <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View" href="#"><i class="ri-eye-line mr-0"></i></a>
