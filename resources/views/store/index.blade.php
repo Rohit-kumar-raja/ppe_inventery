@@ -9,10 +9,10 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h4 class="card-title">Store List</h4>
+                            <h4 class="card-title">{{ $page }} List</h4>
                         </div>
                         <a class="btn btn-primary add-list btn-sm text-white" data-toggle="modal"
-                            data-target="#myModal"><i class="las la-plus mr-3"></i>Add Store</a>
+                            data-target="#myModal"><i class="las la-plus mr-3"></i>Add {{ $page }}</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -58,7 +58,7 @@
                                                 <div class="modal-content">
                                                     <!-- Modal Header -->
                                                     <div class="modal-header">
-                                                        <h6 class="modal-title">Store View Detail</h6>
+                                                        <h6 class="modal-title">{{ $page }} View Detail</h6>
                                                         <button type="button" class="close"
                                                             data-dismiss="modal">&times;</button>
                                                     </div>

@@ -83,11 +83,12 @@
                             <input type="text" class="form-control" placeholder="Enter PAN" name=" pan" value="{{$companies-> pan}}">
                         </div>
 
-                        <div class="col-sm-6">
-                            <button type="submit" class="btn btn-primary mt-2">Submit</button>
-                        </div>
+                      
                     </div>
-
+                    <hr>
+                    <div class="col-sm-12 text-center p-2">
+                        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+                    </div>
                 </form>
                         </div>
                     </div>

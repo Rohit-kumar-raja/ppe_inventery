@@ -10,7 +10,7 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h4 class="card-title">Edit Store </h4>
+                            <h4 class="card-title">Edit {{ $page }} </h4>
                         </div>
                         <!-- <a class="btn btn-primary add-list btn-sm text-white"  data-toggle="modal" data-target="#myModal"><i
                                 class="las la-plus mr-3"></i>Add Company</a>  -->
