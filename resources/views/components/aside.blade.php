@@ -1,7 +1,7 @@
 <div class="iq-sidebar  sidebar-default ">
     <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
         <a href="../backend/index.php" class="header-logo">
-            <img src="../assets/images/logo.png" class="img-fluid rounded-normal light-logo" alt="logo">
+            <img src="{{asset('assets/images/logo.png')}}" class="img-fluid rounded-normal light-logo" alt="logo">
             <h5 class="logo-title light-logo ml-3">Project Name</h5>
         </a>
         <div class="iq-menu-bt-sidebar ml-0">
@@ -26,7 +26,7 @@
                 <li class=" ">
                     <a href="#setup" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <i class="fad fa-abacus"></i>
-                        <span class="ml-4">Setup</span>
+                        <span class="ml-4">Company</span>
                         <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="10 15 15 20 20 15"></polyline>
                             <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
@@ -34,27 +34,18 @@
                     </a>
                     <ul id="setup" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="active">
-                            <a href="../backend/company.php">
+                            <a href="/company/list">
                                 <i class="las la-minus"></i><span>Company Profile</span>
                             </a>
                         </li>
-                        <li class="">
-                            <a href="../backend/store.php">
-                                <i class="las la-minus"></i><span>Store</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="../backend/area.php">
-                                <i class="las la-minus"></i><span>Area</span>
-                            </a>
-                        </li>
+                       
                     </ul>
                 </li>
 
                 <li class=" ">
                     <a href="#admin" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <i class="fad fa-users-cog"></i>
-                        <span class="ml-4">Adminstration</span>
+                        <span class="ml-4">Store</span>
                         <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="10 15 15 20 20 15"></polyline>
                             <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
@@ -62,15 +53,32 @@
                     </a>
                     <ul id="admin" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
-                            <a href="../backend/page-list-product.php">
-                                <i class="las la-minus"></i><span>Admin List</span>
+                            <a href="/store/index">
+                                <i class="las la-minus"></i><span>Store List</span>
                             </a>
-                        </li>
+                        </li>                       
+                    </ul>
+                </li>
+
+
+
+                <li class=" ">
+                    <a href="#area" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                        <i class="fab fa-stack-overflow"></i>
+                        <span class="ml-4">Area</span>
+                        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="10 15 15 20 20 15"></polyline>
+                            <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                        </svg>
+                    </a>
+                    <ul id="area" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                        
                         <li class="">
-                            <a href="../backend/page-add-product.php">
-                                <i class="las la-minus"></i><span>Add Admin</span>
+                            <a href="/ppe/index">
+                                <i class="las la-minus"></i><span>List Area</span>
                             </a>
                         </li>
+
                     </ul>
                 </li>
 
@@ -86,24 +94,44 @@
                         </svg>
                     </a>
                     <ul id="product" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                        
                         <li class="">
-                            <a href="../backend/page-list-category.php">
-                                <i class="las la-minus"></i><span>List Category</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="../backend/page-list-product.php">
-                                <i class="las la-minus"></i><span>Add PPE</span>
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="../backend/ppelist.php">
+                            <a href="/ppe/index">
                                 <i class="las la-minus"></i><span>List PPE</span>
                             </a>
                         </li>
 
                     </ul>
                 </li>
+
+
+                <li class=" ">
+                    <a href="#worker" class="collapsed" data-toggle="collapse" aria-expanded="false">
+                        <i class="fab fa-stack-overflow"></i>
+                        <span class="ml-4">Employee List</span>
+                        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="10 15 15 20 20 15"></polyline>
+                            <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
+                        </svg>
+                    </a>
+                    <ul id="worker" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                        
+                        <li class="">
+                            <a href="/worker/index">
+                                <i class="las la-minus"></i><span>List Worker</span>
+                            </a>
+                        </li>
+
+                        <li class="">
+                            <a href="/supervisor/index">
+                                <i class="las la-minus"></i><span>List Supervisor</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                </li>
+
 
                 <li class=" ">
                     <a href="#people" class="collapsed" data-toggle="collapse" aria-expanded="false">

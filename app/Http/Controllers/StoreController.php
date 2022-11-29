@@ -14,7 +14,7 @@ class StoreController extends Controller
      */
     public function index()
     {
-        //
+        return view('store.index',['store' =>  Store::get()]);
     }
 
     /**
@@ -22,9 +22,15 @@ class StoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function save(Request $request)
     {
-        //
+        $store = new Store;
+        $store->name = $request->name;
+        $store->address = $request->address;
+        $store->description = $request->description;
+        $store->status = $request->status;
+        $store->save();
+        return redirect('/store/index');
     }
 
     /**
@@ -33,9 +39,15 @@ class StoreController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request , $id)
     {
-        //
+        $store = Store::where('id',$id)->first();
+        $store->name = $request->name;
+        $store->address = $request->address;
+        $store->description = $request->description;
+        $store->status = $request->status;
+        $store->save();
+        return redirect('/store/index');
     }
 
     /**
@@ -55,9 +67,10 @@ class StoreController extends Controller
      * @param  \App\Models\Store  $store
      * @return \Illuminate\Http\Response
      */
-    public function edit(Store $store)
+    public function edit(Request $request,$id)
     {
-        //
+        $store = Store::where('id',$id)->first();
+        return view('store.edit',['store' => $store]);
     }
 
     /**
@@ -78,8 +91,10 @@ class StoreController extends Controller
      * @param  \App\Models\Store  $store
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Store $store)
+    public function destroy(Request $request , $id)
     {
-        //
+        $store = Store::where('id',$id)->first();
+        $store->delete();
+        return redirect('/store/index');
     }
 }
