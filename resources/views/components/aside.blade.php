@@ -28,7 +28,7 @@
                 <li class=" ">
                     <a href="#setup" class="collapsed" data-toggle="collapse" aria-expanded="false">
                     <i class="fab fa-stack-overflow"></i>
-                        <span class="ml-4">Company</span>
+                        <span class="ml-4">Setup</span>
                         <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="10 15 15 20 20 15"></polyline>
                             <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
@@ -40,52 +40,20 @@
                                 <i class="las la-minus"></i><span>Company Profile</span>
                             </a>
                         </li>
-                       
-                    </ul>
-                </li>
-
-                <li class=" ">
-                    <a href="#admin" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                    <i class="fab fa-stack-overflow"></i>
-                        <span class="ml-4">Store</span>
-                        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="10 15 15 20 20 15"></polyline>
-                            <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                        </svg>
-                    </a>
-                    <ul id="admin" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                         <li class="">
                             <a href="/store/index">
-                                <i class="las la-minus"></i><span>Store List</span>
+                                <i class="las la-minus"></i><span> List</span>
                             </a>
-                        </li>                       
-                    </ul>
-                </li>
-
-
-
-                <li class=" ">
-                    <a href="#area" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                        <i class="fab fa-stack-overflow"></i>
-                        <span class="ml-4">Area</span>
-                        <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="10 15 15 20 20 15"></polyline>
-                            <path d="M4 4h7a4 4 0 0 1 4 4v12"></path>
-                        </svg>
-                    </a>
-                    <ul id="area" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        
+                        </li>  
                         <li class="">
                             <a href="/ppe/index">
-                                <i class="las la-minus"></i><span>List Area</span>
+                                <i class="las la-minus"></i><span> Area</span>
                             </a>
                         </li>
-
                     </ul>
                 </li>
 
-
-
+            
                 <li class=" ">
                     <a href="#product" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <i class="fab fa-stack-overflow"></i>

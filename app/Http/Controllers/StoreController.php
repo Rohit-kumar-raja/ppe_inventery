@@ -24,12 +24,7 @@ class StoreController extends Controller
      */
     public function save(Request $request)
     {
-        $store = new Store;
-        $store->name = $request->name;
-        $store->address = $request->address;
-        $store->description = $request->description;
-        $store->status = $request->status;
-        $store->save();
+       Store::insert($request->except('_token'));
         return redirect('/store/index');
     }
 

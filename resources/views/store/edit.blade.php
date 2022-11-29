@@ -17,42 +17,37 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <form method="POST" action="/store/save/{{$store-> id}}">
+                            <form method="POST" action="/store/save/{{ $store->id }}">
                                 <div class="row">
                                     @csrf
 
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-4">
                                         <label>Name:</label>
-                                        <input type="text" class="form-control"  placeholder="Enter Name"
-                                            name=" name" value="{{ $store-> name}}">
+                                        <input type="text" class="form-control" placeholder="Enter Name"
+                                            name=" name" value="{{ $store->name }}">
                                     </div>
 
-                                    <div class="col-sm-12">
-                                        <label>Address:</label>
-                                        <textarea class="form-control" name="address" placeholder="Enter Address"
-                                            >{{$store ->address }}</textarea>
-                                    </div>
-
-                                    <div class="col-sm-12">
-                                        <label>Description:</label>
-                                        <textarea class="form-control" name="description" placeholder="Enter Address"
-                                            >{{$store ->description }}</textarea>
-                                    </div>
-
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-4">
                                         <label>Status:</label>
                                         <select name="status" class="form-control">
-                                            <option selected readonly>{{$store->status}}</option>
-                                            <option value="active" >Active</option>
-                                            <option value="deactive" >Deactive</option>
+                                            <option value="1">Active</option>
+                                            <option value="0">Deactive</option>
                                         </select>
                                     </div>
-                                
-                                    <div class="col-sm-6">
-                                        <button type="submit" class="btn btn-primary mt-2">Update</button>
+
+                                    <div class="col-sm-4">
+                                        <label>Address:</label>
+                                        <textarea class="form-control" name="address" placeholder="Enter Address">{{ $store->address }}</textarea>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <label>Description:</label>
+                                        <textarea class="form-control" name="description" placeholder="Enter Address">{{ $store->description }}</textarea>
                                     </div>
                                 </div>
-
+                                <div class="col-sm-12 p-3 text-center">
+                                    <button type="submit" class="btn btn-primary mt-2">Update</button>
+                                </div>
                             </form>
                         </div>
                     </div>
