@@ -67,11 +67,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/supervisor/update/{id}', [SupervisorController::class, 'update']);
     Route::get('/supervisor/delete/{id}', [SupervisorController::class, 'destroy']);
 
-
-
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/admin/list', [adminController::class, 'index'])->name('admin');
+    Route::post('/admin/save', [adminController::class, 'save'])->name('admin.save');
+    Route::get('/admin/list/edit/{id}', [adminController::class, 'edit'])->name('admin.edit');
+    Route::post('/admin/list/save/{id}', [adminController::class, 'update'])->name('admin.update');
+    Route::get('/admin/delete/{id}', [adminController::class, 'destroy'])->name('admin.delete');
 });
 
 require __DIR__ . '/auth.php';

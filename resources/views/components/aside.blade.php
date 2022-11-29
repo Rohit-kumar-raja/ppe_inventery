@@ -63,7 +63,7 @@
 
                 <li class=" ">
                     <a href="#admin" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                        <i class="fad fa-users-cog"></i>
+                        <i class="fas fa-users-cog"></i>
                         <span class="ml-4">Adminstration</span>
                         <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -247,8 +247,8 @@
                 </li>
                 <li class=" ">
                     <a href="#reports" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                        <i class="fad fa-file-chart-pie"></i>
-                        <span class="ml-4">Reports</span>
+                        <i class="fas fa-chart-pie"></i>
+                                                <span class="ml-4">Reports</span>
                         <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
