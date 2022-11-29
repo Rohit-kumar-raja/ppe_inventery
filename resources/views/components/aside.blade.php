@@ -2,7 +2,7 @@
     <div class="iq-sidebar-logo d-flex align-items-center justify-content-between">
         <a href="../backend/index.php" class="header-logo">
             <img src="{{asset('assets/images/logo.png')}}" class="img-fluid rounded-normal light-logo" alt="logo">
-            <h5 class="logo-title light-logo ml-3">Project Name</h5>
+            <h5 class="logo-title light-logo ml-3">PPE Inventory</h5>
         </a>
         <div class="iq-menu-bt-sidebar ml-0">
         <!-- <i class="wrapper-menu fas fa-bars"></i> -->
@@ -23,9 +23,11 @@
                     </a>
                 </li>
 
+
+                
                 <li class=" ">
                     <a href="#setup" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                        <i class="fad fa-abacus"></i>
+                    <i class="fab fa-stack-overflow"></i>
                         <span class="ml-4">Company</span>
                         <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="10 15 15 20 20 15"></polyline>
@@ -44,7 +46,7 @@
 
                 <li class=" ">
                     <a href="#admin" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                        <i class="fad fa-users-cog"></i>
+                    <i class="fab fa-stack-overflow"></i>
                         <span class="ml-4">Store</span>
                         <svg class="svg-icon iq-arrow-right arrow-active" width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="10 15 15 20 20 15"></polyline>
