@@ -10,10 +10,9 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h6 class="card-title">Edit Company </h6>
+                            <h6 class="card-title">Edit {{ $page}} </h6>
                         </div>                    
-                         <!-- <a class="btn btn-primary add-list btn-sm text-white"  data-toggle="modal" data-target="#myModal"><i
-                                class="las la-plus mr-3"></i>Add Company</a>  -->
+                       
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

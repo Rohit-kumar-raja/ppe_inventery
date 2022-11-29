@@ -5,14 +5,14 @@
                 <i class="ri-menu-line wrapper-menu"></i>
                 <a href="../backend/index.php" class="header-logo">
                     <img src="../assets/images/logo.png" class="img-fluid rounded-normal" alt="logo">
-                    <h5 class="logo-title ml-3">PPE Trial Version 1.0</h5>
+                    <h5 class="logo-title ml-3">{{ env('APP_NAME') }} {{ env('TRIAL_VERSION_NAME')}}</h5>
 
                 </a>
             </div>
             <div class="iq-search-bar device-search">
                 <form action="#" class="searchbox">
                     
-                    <h5 class="logo-title ml-3">PPE Trial Version 1.0</h5>
+                    <h5 class="logo-title ml-3">{{ env('APP_NAME') }} {{ env('TRIAL_VERSION_NAME')}}</h5>
                     <!-- <input type="text" class="text search-input" placeholder="Search here..."> -->
                 </form>
             </div>

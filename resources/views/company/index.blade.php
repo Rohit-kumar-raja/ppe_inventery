@@ -8,12 +8,38 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h4 class="card-title">List Company </h4>
+                            <h4 class="card-title">List {{ $page }} </h4>
                         </div>
                         <a class="btn btn-primary add-list btn-sm text-white" data-toggle="modal"
-                            data-target="#myModal"><i class="las la-plus mr-3"></i>Add Company</a>
+                            data-target="#myModal"><i class="las la-plus mr-3"></i>Add {{ $page }}</a>
                     </div>
+                
                     <div class="card-body">
+                        @if (session('store'))
+                        <div class="alert alert-success">
+                            {{ session('store') }}
+                        </div>
+                    @endif
+                    @if (session('delete'))
+                        <div class="alert alert-danger">
+                            {{ session('delete') }}
+                        </div>
+                    @endif
+                    @if (session('update'))
+                        <div class="alert alert-success">
+                            {{ session('update') }}
+                        </div>
+                    @endif
+                    @if (session('status'))
+                        <div class="alert alert-secondary">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    @if (session('status1'))
+                        <div class="alert alert-success">
+                            {{ session('status1') }}
+                        </div>
+                    @endif
                         <div class="table-responsive">
                             <table id="datatable" class="table data-tables table-striped">
                                 <thead>
@@ -54,7 +80,7 @@
                                             </td>
                                         </tr>
                                         <!-- The Modal View-->
-                                   @include('company.view')
+                                        @include('company.view')
                                         <!-- // the model view end -->
                                     @endforeach
                                 </tbody>

@@ -14,7 +14,7 @@
                             <script>
                                 document.write(new Date().getFullYear())
                             </script>©
-                        </span> <a href="#" class="">Project Name</a>.
+                        </span> <a href="#" class="">{{ env('APP_NAME') }}</a> All Rights Reserved .
                     </div>
                 </div>
             </div>
