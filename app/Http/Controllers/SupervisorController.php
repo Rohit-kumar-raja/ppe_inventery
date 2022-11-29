@@ -92,6 +92,8 @@ class SupervisorController extends Controller
         return redirect('/supervisor/index');
     }
 
+
+    
     /**
      * Remove the specified resource from storage.
      *
