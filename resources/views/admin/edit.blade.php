@@ -16,7 +16,7 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                        <form method="POST" action="/company/list/save/{{$companies-> id}}">
+                        <form method="POST" action="/admin/list/save/{{$companies-> id}}">
                     <div class="row">
                         @csrf
                         

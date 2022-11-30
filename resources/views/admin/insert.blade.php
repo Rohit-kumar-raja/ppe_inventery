@@ -9,7 +9,7 @@
             </div>
             <!-- Modal body -->
             <div class="modal-body">
-                <form method="POST" action="/company/save">
+                <form method="POST" action="/admin/save">
                     <div class="row">
                         @csrf
                         <input type="hidden" name="created_at" value="{{ date('Y-m-d h:i:s') }}">
@@ -19,13 +19,13 @@
                         </div>
 
                         <div class="col-sm-6">
-                            <label>Area:</label>
-                            <input type="text" class="form-control" placeholder="Enter Area" name="area">
+                            <label>Email Address:</label>
+                            <input type="text" class="form-control" placeholder="Enter email" name="email">
                         </div>
 
                         <div class="col-sm-6">
-                            <label>City:</label>
-                            <input type="text" class="form-control" placeholder="Enter City" name="city">
+                            <label>phone:</label>
+                            <input type="text" class="form-control" placeholder="Enter phone" name="phone">
                         </div>
 
                         <div class="col-sm-6">
