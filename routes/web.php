@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminRoleController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
@@ -23,7 +25,13 @@ use App\Models\Supervisor;
 |
 */
 
+<<<<<<< HEAD
     Route::middleware('auth')->group(function () {
+=======
+require __DIR__ . '/auth.php';
+
+Route::middleware('auth')->group(function () {
+>>>>>>> 2a01d679c45bfc32adbd81b0f121fd51eb1f752c
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -69,6 +77,7 @@ use App\Models\Supervisor;
     Route::post('/supervisor/update/{id}', [SupervisorController::class, 'update'])->name('supervisor.update');
     Route::get('/supervisor/delete/{id}', [SupervisorController::class, 'destroy'])->name('supervisor.destroy');
 
+<<<<<<< HEAD
     // category route
     Route::get('/category/index',[CategoryController::class,'index'])->name('category');
     Route::post('/category/create',[CategoryController::class,'create'])->name('category.save');
@@ -83,5 +92,17 @@ use App\Models\Supervisor;
     Route::post('/admin/list/save/{id}', [adminController::class, 'update'])->name('admin.update');
     Route::get('/admin/destroy/{id}', [adminController::class, 'destroy'])->name('admin.delete');
 });
+=======
+    Route::get('/admin/list', [AdminController::class, 'index'])->name('admin');
+    Route::post('/admin/save', [AdminController::class, 'save'])->name('admin.save');
+    Route::get('/admin/list/edit/{id}', [AdminController::class, 'edit'])->name('admin.edit');
+    Route::post('/admin/list/save/{id}', [AdminController::class, 'update'])->name('admin.update');
+    Route::get('/admin/delete/{id}', [AdminController::class, 'destroy'])->name('admin.delete');
+>>>>>>> 2a01d679c45bfc32adbd81b0f121fd51eb1f752c
 
-require __DIR__ . '/auth.php';
+    Route::get('/admin/role/list', [AdminRoleController::class, 'index'])->name('admin.role');
+    Route::post('/admin/role/save', [AdminRoleController::class, 'save'])->name('admin.role.save');
+    Route::get('/admin/role/list/edit/{id}', [AdminRoleController::class, 'edit'])->name('admin.role.edit');
+    Route::post('/admin/role/list/save/{id}', [AdminRoleController::class, 'update'])->name('admin.role.update');
+    Route::get('/admin/role/delete/{id}', [AdminRoleController::class, 'destroy'])->name('admin.role.delete');
+});

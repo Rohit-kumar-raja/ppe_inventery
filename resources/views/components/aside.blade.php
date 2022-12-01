@@ -73,14 +73,14 @@
                         </svg>
                     </a>
                     <ul id="admin" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class="">
-                            <a href="../backend/page-list-product.php">
-                                <i class="las la-minus"></i><span>Admin List</span>
+                        {{-- <li class="">
+                            <a href="{{ route('admin.role')}}">
+                                <i class="las la-minus"></i><span>Admin Role </span>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="">
-                            <a href="../backend/page-add-product.php">
-                                <i class="las la-minus"></i><span>Add Admin</span>
+                            <a href="{{ route('admin') }}">
+                                <i class="las la-minus"></i><span> Admin</span>
                             </a>
                         </li>
                     </ul>

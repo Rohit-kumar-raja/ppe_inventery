@@ -54,33 +54,32 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($company as $company)
+                                    @foreach ($admins as $admin)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $company->name }}</td>
-                                            <td>{{ $company->area }}</td>
-                                            <td>{{ $company->city }}</td>
-                                            <td>{{ $company->state }}</td>
-                                            <td>{{ $company->pincode }}</td>
+                                            <td>{{ $admin->name }}</td>
+                                            <td>{{ $admin->area }}</td>
+                                            <td>{{ $admin->city }}</td>
+                                            <td>{{ $admin->state }}</td>
+                                            <td>{{ $admin->pincode }}</td>
                                             <td>
                                                 <div class="d-flex align-items-center list-action">
                                                     <a class="badge badge-info mr-2" data-toggle="modal"
-                                                        data-target="#myModal_view{{ $company->id }}"><i
+                                                        data-target="#myModal_view{{ $admin->id }}"><i
                                                             class="fa fa-eye  mr-0"></i></a>
-                                                    <!-- <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"  data-toggle="modal" data-target="#myModal_view"><i class="fa fa-eye  mr-0"></i></a> -->
                                                     <a class="badge bg-success mr-2" data-toggle="tooltip"
                                                         data-placement="top" title="" data-original-title="Edit"
-                                                        href="/company/list/edit/{{ $company->id }}"><i
-                                                            class="fa fa-pen  mr-0"></i></a>
+                                                        href="{{ route('admin.edit',$admin->id) }}"><i
+                                                            class="fas fa-edit  mr-0"></i></a>
                                                     <a class="badge bg-warning mr-2" data-toggle="tooltip"
                                                         data-placement="top" title="" data-original-title="Delete"
-                                                        href="/company/delete/{{ $company->id }}"><i
-                                                            class="fa fa-trash mr-0"></i></a>
+                                                        href="{{ route('admin.delete', $admin->id) }}"><i
+                                                            class="fas fa-trash-alt mr-0"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
                                         <!-- The Modal View-->
-                                        @include('company.view')
+                                        @include('admin.view')
                                         <!-- // the model view end -->
                                     @endforeach
                                 </tbody>
@@ -103,7 +102,7 @@
         </div>
     </div>
 </div>
-@include('company.insert')
+@include('admin.insert')
 <!-- // model -->
 <x-foot />
 <x-footer />
