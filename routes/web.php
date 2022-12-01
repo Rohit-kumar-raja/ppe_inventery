@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\PpeController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\SupervisorController;
@@ -87,6 +88,13 @@ use App\Models\Supervisor;
     Route::post('/admin/list/save/{id}', [adminController::class, 'update'])->name('admin.update');
     Route::get('/admin/destroy/{id}', [adminController::class, 'destroy'])->name('admin.delete');
 
+
+    // feedback route
+    Route::get('/feedback/index',[FeedbackController::class,'index']);
+    Route::post('/feedback/save',[FeedbackController::class,'save']);
+    Route::get('/feedback/destroy/{id}',[FeedbackController::class,'destroy']);
+
+    
     // admin route
     Route::get('/admin/list', [AdminController::class, 'index'])->name('admin');
     Route::post('/admin/save', [AdminController::class, 'save'])->name('admin.save');

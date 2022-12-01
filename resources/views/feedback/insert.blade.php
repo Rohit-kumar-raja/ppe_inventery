@@ -5,17 +5,17 @@
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h6 class="modal-title">Add Category</h6>
+                <h6 class="modal-title">Add Feedback</h6>
                 <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
             <!-- Modal body -->
             <div class="modal-body">
-                <form method="POST" action="/category/create">
+                <form method="POST" action="/feedback/save">
                     <div class="row">
                         @csrf
                         <div class="col-sm-12">
-                            <label>Name:</label>
-                            <input type="text" class="form-control" placeholder="Enter Name" name=" name">
+                            <label>Subject:</label>
+                            <input type="text" class="form-control" placeholder="Enter Subject" name=" subject">
                         </div>                      
 
                         <div class="col-sm-12">
@@ -24,15 +24,9 @@
                         </div>
 
                         <div class="col-sm-12">
-                            <label>IS/EN Code:</label>
-                            <input type="text" class="form-control" placeholder="Enter IS/EN Code" name=" isencode">
+                            <label>Employee ID:</label>
+                            <input type="text" class="form-control" placeholder="Enter Employee ID" name=" empid">
                         </div>
-
-
-                        <div class="col-sm-12">
-                            <label>Short Name:</label>
-                            <input type="text" class="form-control" placeholder="Enter Short Name" name=" shortname">
-                        </div> 
 
                         <div class="col-sm-6">
                             <button type="submit" class="btn btn-primary mt-2">Submit</button>

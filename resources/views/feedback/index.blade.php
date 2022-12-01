@@ -10,15 +10,14 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h4 class="card-title">Category List</h4>
+                            <h4 class="card-title">Feedback List</h4>
                         </div>
 
 
                         <a class="btn btn-primary add-list btn-sm text-white" data-toggle="modal"
-                            data-target="#myModal"><i class="las la-plus mr-3"></i>Add Category</a>
+                            data-target="#myModal"><i class="las la-plus mr-3"></i>Add Feedback</a>
                     </div>
                     <div class="card-body">
-                        
                     @if (session('save'))
                         <div class="alert alert-success">
                             {{ session('save') }}
@@ -44,54 +43,48 @@
                             {{ session('status1') }}
                         </div>
                     @endif
-
                         <div class="table-responsive">
                             <table id="datatable" class="table data-tables table-striped">
                                 <thead>
                                     <tr class="ligth">
                                         <th>ID</th>
-                                        <th>Name</th>
+                                        <th>Subject</th>
                                         <th>Description</th>
-                                        <th>IS/EN Code</th>
+                                        <th>empid</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($category as  $category)
+                                    @foreach($feedback as  $feedback)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
-                                        <td>{{  $category -> name}}</td>
-                                        <td>{{  $category -> description}}</td>
-                                        <td>{{  $category -> isencode}}</td>
+                                        <td>{{  $feedback -> subject}}</td>
+                                        <td>{{  $feedback -> description}}</td>
+                                        <td>{{  $feedback -> empid}}</td>
                                         <td>
                                             <div class="d-flex align-items-center list-action">
                                                 <a class="badge badge-info mr-2" data-toggle="modal"
-                                                    data-target="#myModal_view{{  $category-> id}}"><i
+                                                    data-target="#myModal_view{{  $feedback-> id}}"><i
                                                         class="fa fa-eye  mr-0"></i></a>
-                                                <!-- <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"  data-toggle="modal" data-target="#myModal_view"><i class="fa fa-eye  mr-0"></i></a> -->
-                                                <a class="badge bg-success mr-2" data-toggle="tooltip"
-                                                    data-placement="top" title="" data-original-title="Edit"
-                                                    href="/category/edit/{{  $category-> id}}"><i
-                                                        class="fa fa-pen  mr-0"></i></a>
+                                                
                                                 <a class="badge bg-warning mr-2" data-toggle="tooltip"
                                                     data-placement="top" title="" data-original-title="Delete"
-                                                    href="/category/destroy/{{  $category-> id}}"><i
+                                                    href="/feedback/destroy/{{  $feedback-> id}}"><i
                                                         class="fa fa-trash mr-0"></i></a>
                                             </div>
                                         </td>
                                     </tr>
 
+                                    @include('feedback.view')
 
-                                    @include('category.view')
-                                    
                                     @endforeach
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Name</th>
+                                    <th>ID</th>
+                                        <th>Subject</th>
                                         <th>Description</th>
-                                        <th>Status</th>
+                                        <th>empid</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
@@ -105,8 +98,6 @@
 </div>
 
 
-
-
-@include('category.insert')
+@include('feedback.insert')
 <x-foot />
 <x-footer />

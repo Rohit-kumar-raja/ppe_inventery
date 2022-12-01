@@ -30,7 +30,8 @@ class CategoryController extends Controller
         $category = new Category;
         $category->name = $request->name;
         $category->description = $request->description;
-        $category->status = $request->status;
+        $category->isencode = $request->isencode;
+        $category->shortname = $request->shortname;
         $category->save();
         return redirect('/category/index')->with('save',$this->page_name.' Added Successfully !!! ');
     }
@@ -82,7 +83,8 @@ class CategoryController extends Controller
         $category = Category::where('id',$id)->first();
         $category->name = $request->name;
         $category->description = $request->description;
-        $category->status = $request->status;
+        $category->isencode = $request->isencode;
+        $category->shortname = $request->shortname;
         $category->save();
         return redirect('/category/index')->with('update',$this->page_name.' Updated Successfully !!! ');;
     }

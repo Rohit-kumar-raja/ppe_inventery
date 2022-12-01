@@ -12,7 +12,7 @@
                         <div class="header-title">
                             <h4 class="card-title">Edit Category </h4>
                         </div>
-                        
+
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -22,26 +22,30 @@
 
                                     <div class="col-sm-12">
                                         <label>Name:</label>
-                                        <input type="text" class="form-control"  placeholder="Enter Name"
-                                            name=" name" value="{{  $category-> name}}">
+                                        <input type="text" class="form-control" placeholder="Enter Name" name=" name"
+                                            value="{{  $category-> name}}">
                                     </div>
 
                                     <div class="col-sm-12">
                                         <label>Description:</label>
-                                        <textarea class="form-control" name="description" placeholder="Enter Address">{{ $category ->description }}</textarea>
+                                        <textarea class="form-control" name="description"
+                                            placeholder="Enter Address">{{ $category ->description }}</textarea>
                                     </div>
 
                                     <div class="col-sm-12">
-                                        <label>Status:</label>
-                                        <select name="status" class="form-control">
-                                            <option selected readonly>{{ $category->status}}</option>
-                                                <option value="1">Active</option>
-                                                <option value="0">Deactive</option>
-                                        </select>
+                                        <label>IS/EN Code:</label>
+                                        <input type="text" class="form-control" placeholder="Enter IS/EN Code"
+                                            name=" isencode" >
                                     </div>
 
                                     <div class="col-sm-12">
-                                    <button type="submit" class="btn btn-primary mt-2">Update</button>
+                                        <label>Short Name:</label>
+                                        <input type="text" class="form-control" placeholder="Enter Short Name"
+                                            name=" shortname" >
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <button type="submit" class="btn btn-primary mt-2">Update</button>
                                     </div>
 
                                 </div>

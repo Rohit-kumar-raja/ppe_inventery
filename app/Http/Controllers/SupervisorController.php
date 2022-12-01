@@ -16,7 +16,7 @@ class SupervisorController extends Controller
     public $page_name = 'Supervisor';
     public function index()
     {
-        $supervisor = Worker::get();
+        $supervisor = Worker::where('type','supervisor')->get();
         return view('/supervisor/index',['supervisor' => $supervisor]);
     }
 

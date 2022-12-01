@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ppe;
 use Illuminate\Http\Request;
 
+
 class PpeController extends Controller
 {
     /**

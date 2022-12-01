@@ -15,7 +15,7 @@ class WorkerController extends Controller
     public $page_name = 'Worker';
     public function index()
     {
-        $worker = Worker::get();
+        $worker = Worker::where('type','worker')->get();
         return view('/worker/index',['worker' => $worker]);
     }
 
