@@ -13,7 +13,7 @@ class PpeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public $page_name = 'Ppe';
+    public $page_name = 'PPE';
     public function index()
     {
         return view('ppe.index',['ppe' =>  Ppe::get()]);
