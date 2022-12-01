@@ -18,6 +18,31 @@
                             data-target="#myModal"><i class="las la-plus mr-3"></i>Add Worker</a>
                     </div>
                     <div class="card-body">
+                    @if (session('save'))
+                        <div class="alert alert-success">
+                            {{ session('save') }}
+                        </div>
+                    @endif
+                    @if (session('delete'))
+                        <div class="alert alert-danger">
+                            {{ session('delete') }}
+                        </div>
+                    @endif
+                    @if (session('update'))
+                        <div class="alert alert-success">
+                            {{ session('update') }}
+                        </div>
+                    @endif
+                    @if (session('status'))
+                        <div class="alert alert-secondary">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    @if (session('status1'))
+                        <div class="alert alert-success">
+                            {{ session('status1') }}
+                        </div>
+                    @endif
                         <div class="table-responsive">
                             <table id="datatable" class="table data-tables table-striped">
                                 <thead>
@@ -58,75 +83,7 @@
 
 
 
-                                    <!-- The Modal View-->
-                                    <div class="modal fade" id="myModal_view{{ $worker-> id}}">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <!-- Modal Header -->
-                                                <div class="modal-header">
-                                                    <h6 class="modal-title">Worker View Detail</h6>
-                                                    <button type="button" class="close"
-                                                        data-dismiss="modal">&times;</button>
-                                                </div>
-                                                <!-- Modal body -->
-                                                <div class="modal-body">
-                                                    <form method="POST" >
-                                                        <div class="row">
-                                                            @csrf
-
-                                                            <div class="col-sm-6">
-                                                                <label>Name:</label>
-                                                                <input type="text" class="form-control" readonly
-                                                                    placeholder="Enter Name" name=" name"
-                                                                    value="{{ $worker-> name}}">
-                                                            </div>
-
-                                                            <div class="col-sm-6">
-                                                                <label>Email:</label>
-                                                                <input type="text" class="form-control" readonly
-                                                                    placeholder="Enter Name" name=" name"
-                                                                    value="{{ $worker-> email}}">
-                                                            </div>
-
-                                                            <div class="col-sm-6">
-                                                                <label>Phone No:</label>
-                                                                <input type="text" class="form-control" readonly
-                                                                    placeholder="Enter Phone No" name=" phone"
-                                                                    value="{{ $worker-> phone}}">
-                                                            </div>
-
-                                                            <div class="col-sm-6">
-                                                                <label>Employee UID No:</label>
-                                                                <input type="text" class="form-control" readonly
-                                                                    placeholder="Enter Employee UID No" name=" empno"
-                                                                    value="{{ $worker-> empno}}">
-                                                            </div>
-
-                                                            <div class="col-sm-12">
-                                                                <label>Address:</label>
-                                                                <textarea class="form-control" name="address"
-                                                                    placeholder="Enter Address"
-                                                                    readonly>{{$worker ->address }}</textarea>
-                                                            </div>
-                                                                                                                        
-
-                                                            <div class="col-sm-12">
-                                                                <label>Description:</label>
-                                                                <textarea class="form-control" name="description"
-                                                                    placeholder="Enter Address"
-                                                                    readonly>{{$worker ->description }}</textarea>
-                                                            </div>
-
-
-                                                        </div>
-
-                                                    </form>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- // the model view end -->
+                                    @include('worker.view')
 
                                     @endforeach
                                 </tbody>
@@ -151,64 +108,7 @@
 
 
 
+@include('worker.insert')
 
-
-<!-- The Modal -->
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h6 class="modal-title">Add Worker</h6>
-                <button type="button" class="close" data-dismiss="modal">×</button>
-            </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-                <form method="POST" action="/worker/save">
-                    <div class="row">
-                        @csrf
-
-                        <div class="col-sm-6">
-                            <label>Name:</label>
-                            <input type="text" class="form-control"  placeholder="Enter Name" name=" name">
-                        </div>
-
-                        <div class="col-sm-6">
-                            <label>Email:</label>
-                            <input type="email" class="form-control"  placeholder="Enter email" name=" email">
-                        </div>
-
-                        <div class="col-sm-6">
-                            <label>Phone No:</label>
-                            <input type="text" class="form-control"  placeholder="Enter Phone No" name=" phone">
-                        </div>
-
-                        <div class="col-sm-6">
-                            <label>Employee UID No:</label>
-                            <input type="text" class="form-control"  placeholder="Enter Employee UID No" name=" empno">
-                        </div>
-
-                        <div class="col-sm-12">
-                            <label>Address:</label>
-                            <textarea class="form-control" name="address" placeholder="Enter Address"></textarea>
-                        </div>                        
-                    
-                        <div class="col-sm-12">
-                            <label>Description:</label>
-                            <textarea class="form-control" name="description" placeholder="Enter Description"></textarea>
-                        </div>
-
-                        <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary mt-2">Submit</button>
-                        </div>
-                    </div>
-
-                </form>
-
-            </div>
-        </div>
-    </div>
-</div>
-<!-- // model -->
 <x-foot />
 <x-footer />

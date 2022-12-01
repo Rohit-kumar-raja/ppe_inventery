@@ -12,6 +12,7 @@ class PpeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public $page_name = 'Ppe';
     public function index()
     {
         return view('ppe.index',['ppe' =>  Ppe::get()]);
@@ -29,7 +30,7 @@ class PpeController extends Controller
         $ppe->description = $request->description;
         $ppe->status = $request->status;
         $ppe->save();
-        return redirect('/ppe/index');
+        return redirect('/ppe/index')->with('save',$this->page_name.' Inserted Successfully !!!');
     }
 
     /**
@@ -80,7 +81,7 @@ class PpeController extends Controller
         $ppe->description = $request->description;
         $ppe->status = $request->status;
         $ppe->save();
-        return redirect('/ppe/index');
+        return redirect('/ppe/index')->with('update',$this->page_name.' Updated Successfully !!!');
     }
 
     /**
@@ -89,8 +90,10 @@ class PpeController extends Controller
      * @param  \App\Models\ppe  $ppe
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ppe $ppe)
+    public function destroy($id)
     {
-        //
+        $ppe = ppe::where('id',$id)->first();
+        $ppe -> delete();
+        return redirect('/ppe/index')->with('delete',$this->page_name.' Deleted Successfully !!!');
     }
 }

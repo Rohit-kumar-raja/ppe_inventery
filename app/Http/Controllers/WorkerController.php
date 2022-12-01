@@ -12,6 +12,7 @@ class WorkerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public $page_name = 'Worker';
     public function index()
     {
         $worker = Worker::get();
@@ -34,7 +35,7 @@ class WorkerController extends Controller
         $worker->type = "worker";
         $worker->description = $request->description;
         $worker->save();
-        return redirect('/worker/index');
+        return redirect('/worker/index')->with('save',$this->page_name.' Added Successfully !!!');
     }
 
     /**
@@ -78,17 +79,18 @@ class WorkerController extends Controller
      * @param  \App\Models\Worker  $worker
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+
+     public function update(Request $request, $id)
     {
-        $worker = Worker::where('id',$id)->first();
-        $worker->name = $request->name;
-        $worker->email = $request->email;
-        $worker->phone = $request->phone;
-        $worker->address = $request->address;
-        $worker->empno = $request->empno;
-        $worker->description = $request->description;
-        $worker->save();
-        return redirect('/worker/index');
+        $supervisor = Worker::where('id',$id)->first();
+        $supervisor->name = $request->name;
+        $supervisor->email = $request->email;
+        $supervisor->phone = $request->phone;
+        $supervisor->address = $request->address;
+        $supervisor->empno = $request->empno;
+        $supervisor->description = $request->description;
+        $supervisor->save();
+        return redirect('/worker/index')->with('update',$this->page_name.' Updated Successfully');
     }
 
     /**
@@ -101,7 +103,7 @@ class WorkerController extends Controller
     {
         $worker = worker::where('id',$id)->first();
         $worker->delete();
-        return redirect('/worker/index');
+        return redirect('/worker/index')->with('delete',$this->page_name.' Deleted Successfully');
 
     }
 }

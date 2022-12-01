@@ -7,54 +7,47 @@ use App\Models\Company;
 
 class CompanyController extends Controller
 {
-    Public function index(){        
-        return view('company.index',['company' =>  Company::get()]);
+    public $page_name = 'Company';
+    public function index()
+    {
+        return view('company.index', ['company' =>  Company::get(),'page'=>$this->page_name]);
     }
 
-    Public function save(Request $request){
-        $company = new Company ;
-        $company-> name = $request-> name;
-        $company-> area = $request-> area;
-        $company-> city = $request-> city;
-        $company-> discrict = $request-> discrict;
-        $company-> state	 = $request-> state;
-        $company-> pincode = $request-> pincode;
-        $company-> phone = $request-> phone;
-        $company-> mobile = $request-> mobile;
-        $company-> email = $request-> email;
-        $company-> website = $request-> website;
-        $company-> tin = $request-> tin;
-        $company-> pan = $request-> pan;
-        $company->save();
-        return redirect('company/list');        
+    public function save(Request $request)
+    {
+        Company::insert($request->except('_token'));
+        return redirect('company/list')->with('store',$this->page_name.' Added Successfully !!! ');
     }
 
-    Public function edit($id){
-        $companies = Company::where('id',$id)->first();
-        return view('company.edit',['companies' => $companies]);
+    public function edit($id)
+    {
+        $companies = Company::where('id', $id)->first();
+        return view('company.edit', ['companies' => $companies,'page'=>$this->page_name]);
     }
 
-    public function update(Request $request , $id){
-       $companies = Company::where('id',$id)->first();
-       $companies-> name = $request-> name;
-       $companies-> area = $request-> area;
-       $companies-> city = $request-> city;
-       $companies-> discrict = $request-> discrict;
-       $companies-> state	 = $request-> state;
-       $companies-> pincode = $request-> pincode;
-       $companies-> phone = $request-> phone;
-       $companies-> mobile = $request-> mobile;
-       $companies-> email = $request-> email;
-       $companies-> website = $request-> website;
-       $companies-> tin = $request-> tin;
-       $companies-> pan = $request-> pan;
-       $companies->save();
-        return redirect('company/list');
+    public function update(Request $request, $id)
+    {
+        $companies = Company::where('id', $id)->first();
+        $companies->name = $request->name;
+        $companies->area = $request->area;
+        $companies->city = $request->city;
+        $companies->discrict = $request->discrict;
+        $companies->state  = $request->state;
+        $companies->pincode = $request->pincode;
+        $companies->phone = $request->phone;
+        $companies->mobile = $request->mobile;
+        $companies->email = $request->email;
+        $companies->website = $request->website;
+        $companies->tin = $request->tin;
+        $companies->pan = $request->pan;
+        $companies->save();
+        return redirect('company/list')->with('update',$this->page_name.' Updated Successfully !!! ');
     }
 
-    public function destroy($id){
-        $companies = Company::where('id',$id)->first();
+    public function destroy($id)
+    {
+        $companies = Company::where('id', $id)->first();
         $companies->delete();
-        return redirect('company/list');
+        return redirect('company/list')->with('delete',$this->page_name.' Deleted Successfully !!! ');
     }
 }

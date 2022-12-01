@@ -18,6 +18,31 @@
                             data-target="#myModal"><i class="las la-plus mr-3"></i>Add PPE</a>
                     </div>
                     <div class="card-body">
+                    @if (session('save'))
+                        <div class="alert alert-success">
+                            {{ session('save') }}
+                        </div>
+                    @endif
+                    @if (session('delete'))
+                        <div class="alert alert-danger">
+                            {{ session('delete') }}
+                        </div>
+                    @endif
+                    @if (session('update'))
+                        <div class="alert alert-success">
+                            {{ session('update') }}
+                        </div>
+                    @endif
+                    @if (session('status'))
+                        <div class="alert alert-secondary">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    @if (session('status1'))
+                        <div class="alert alert-success">
+                            {{ session('status1') }}
+                        </div>
+                    @endif
                         <div class="table-responsive">
                             <table id="datatable" class="table data-tables table-striped">
                                 <thead>
@@ -48,61 +73,13 @@
                                                         class="fa fa-pen  mr-0"></i></a>
                                                 <a class="badge bg-warning mr-2" data-toggle="tooltip"
                                                     data-placement="top" title="" data-original-title="Delete"
-                                                    href="/store/destroy/{{  $ppe-> id}}"><i
+                                                    href="/ppe/destroy/{{  $ppe-> id}}"><i
                                                         class="fa fa-trash mr-0"></i></a>
                                             </div>
                                         </td>
                                     </tr>
 
-
-
-                                    <!-- The Modal View-->
-                                    <div class="modal fade" id="myModal_view{{  $ppe-> id}}">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <!-- Modal Header -->
-                                                <div class="modal-header">
-                                                    <h6 class="modal-title">PPE View Detail</h6>
-                                                    <button type="button" class="close"
-                                                        data-dismiss="modal">&times;</button>
-                                                </div>
-                                                <!-- Modal body -->
-                                                <div class="modal-body">
-                                                    <form method="POST">
-                                                        <div class="row">
-                                                            @csrf
-
-                                                            <div class="col-sm-12">
-                                                                <label>Name:</label>
-                                                                <input type="text" class="form-control" readonly
-                                                                    placeholder="Enter Name" name=" name"
-                                                                    value="{{  $ppe-> name}}">
-                                                            </div>
-                                                            
-                                                            <div class="col-sm-12">
-                                                                <label>Description:</label>
-                                                                <textarea class="form-control" name="description"
-                                                                    placeholder="Enter Address"
-                                                                    readonly>{{ $ppe ->description }}</textarea>
-                                                            </div>
-
-                                                            <div class="col-sm-12">
-                                                                <label>Status:</label>
-                                                                <select name="status" class="form-control">
-                                                                    <option value="" selected disabled>
-                                                                        {{ $ppe->status}}</option>
-                                                                </select>
-                                                            </div>
-
-                                                        </div>
-
-                                                    </form>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- // the model view end -->
+                                    @include('ppe.view')
 
                                     @endforeach
                                 </tbody>
@@ -125,52 +102,6 @@
 </div>
 
 
-
-
-
-<!-- The Modal -->
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h6 class="modal-title">Add PPE</h6>
-                <button type="button" class="close" data-dismiss="modal">×</button>
-            </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-                <form method="POST" action="/ppe/save">
-                    <div class="row">
-                        @csrf
-                        <div class="col-sm-12">
-                            <label>Name:</label>
-                            <input type="text" class="form-control" placeholder="Enter Name" name=" name">
-                        </div>                      
-
-                        <div class="col-sm-12">
-                            <label>Description:</label>
-                            <textarea class="form-control" name="description" placeholder="Enter Description"></textarea>
-                        </div>
-
-                        <div class="col-sm-12">
-                            <label>Status:</label>
-                            <select name="status" class="form-control">
-                                <option value="" selected disabled>Select Status</option>
-                                <option value="active">Active</option>
-                                <option value="deactive">Deactive</option>
-                            </select>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <button type="submit" class="btn btn-primary mt-2">Submit</button>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- // model -->
+@include('ppe.insert')
 <x-foot />
 <x-footer />

@@ -10,14 +10,39 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h4 class="card-title">Store List</h4>
+                            <h4 class="card-title">Area List</h4>
                         </div>
-
-
                         <a class="btn btn-primary add-list btn-sm text-white" data-toggle="modal"
                             data-target="#myModal"><i class="las la-plus mr-3"></i>Add Area</a>
                     </div>
                     <div class="card-body">
+                        
+                    @if (session('save'))
+                        <div class="alert alert-success">
+                            {{ session('save') }}
+                        </div>
+                    @endif
+                    @if (session('delete'))
+                        <div class="alert alert-danger">
+                            {{ session('delete') }}
+                        </div>
+                    @endif
+                    @if (session('update'))
+                        <div class="alert alert-success">
+                            {{ session('update') }}
+                        </div>
+                    @endif
+                    @if (session('status'))
+                        <div class="alert alert-secondary">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    @if (session('status1'))
+                        <div class="alert alert-success">
+                            {{ session('status1') }}
+                        </div>
+                    @endif
+
                         <div class="table-responsive">
                             <table id="datatable" class="table data-tables table-striped">
                                 <thead>
@@ -57,69 +82,8 @@
                                     </tr>
 
 
-
-                                    <!-- The Modal View-->
-                                    <div class="modal fade" id="myModal_view{{ $area-> id}}">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <!-- Modal Header -->
-                                                <div class="modal-header">
-                                                    <h6 class="modal-title">Area View Detail</h6>
-                                                    <button type="button" class="close"
-                                                        data-dismiss="modal">&times;</button>
-                                                </div>
-                                                <!-- Modal body -->
-                                                <div class="modal-body">
-                                                    <form method="POST">
-                                                        <div class="row">
-                                                            @csrf
-
-                                                            <div class="col-sm-12">
-                                                                <label>Name:</label>
-                                                                <input type="text" class="form-control" readonly
-                                                                    placeholder="Enter Name" name=" name"
-                                                                    value="{{ $area-> name}}">
-                                                            </div>
-
-                                                            <div class="col-sm-12">
-                                                                <label>Address:</label>
-                                                                <textarea class="form-control" name="address"
-                                                                    placeholder="Enter Address"
-                                                                    readonly>{{$area ->address }}</textarea>
-                                                            </div>
-
-                                                            <div class="col-sm-12">
-                                                                <label>Contact:</label>
-                                                                <input type="text" class="form-control" readonly
-                                                                    placeholder="Enter Contact No" name=" contact"
-                                                                    value="{{ $area-> contact}}">
-                                                            </div>
-
-                                                            <div class="col-sm-12">
-                                                                <label>Email:</label>
-                                                                <input type="text" class="form-control" readonly
-                                                                    placeholder="Enter Name" name=" name"
-                                                                    value="{{ $area-> email}}">
-                                                            </div>
-
-                                                            <div class="col-sm-12">
-                                                                <label>Description:</label>
-                                                                <textarea class="form-control" name="description"
-                                                                    placeholder="Enter Address"
-                                                                    readonly>{{$area ->description }}</textarea>
-                                                            </div>
-
-
-                                                        </div>
-
-                                                    </form>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- // the model view end -->
-
+@include('area.view')
+                                 
                                     @endforeach
                                 </tbody>
                                 <tfoot>
@@ -142,62 +106,6 @@
 </div>
 
 
-
-
-
-<!-- The Modal -->
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h6 class="modal-title">Add Area</h6>
-                <button type="button" class="close" data-dismiss="modal">×</button>
-            </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-                <form method="POST" action="/area/save">
-                    <div class="row">
-                        @csrf
-
-                        <div class="col-sm-12">
-                            <label>Name:</label>
-                            <input type="text" class="form-control"  placeholder="Enter Name" name=" name">
-                        </div>
-
-                        <div class="col-sm-12">
-                            <label>Address:</label>
-                            <textarea class="form-control" name="address" placeholder="Enter Address"></textarea>
-                        </div>
-
-                        <div class="col-sm-12">
-                            <label>Contact:</label>
-                            <input type="text" class="form-control"  placeholder="Enter Contact No"
-                                name=" contact">
-                        </div>
-
-                        <div class="col-sm-12">
-                            <label>Email:</label>
-                            <input type="text" class="form-control"  placeholder="Enter Email" name=" email">
-                        </div>
-
-                        <div class="col-sm-12">
-                            <label>Description:</label>
-                            <textarea class="form-control" name="description"
-                                placeholder="Enter Description"></textarea>
-                        </div>
-                        <div class="col-sm-6">
-                            <button type="submit" class="btn btn-primary mt-2">Submit</button>
-                        </div>
-
-                    </div>
-
-                </form>
-          
-        </div>
-    </div>
-</div>
-</div>
-<!-- // model -->
+@include('area.insert')
 <x-foot />
 <x-footer />

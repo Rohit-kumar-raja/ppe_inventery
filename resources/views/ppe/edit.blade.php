@@ -36,8 +36,8 @@
                                         <label>Status:</label>
                                         <select name="status" class="form-control">
                                             <option selected readonly>{{ $ppe->status}}</option>
-                                                <option value="active">Active</option>
-                                                <option value="deactive">Deactive</option>
+                                                <option value="1">Active</option>
+                                                <option value="0">Deactive</option>
                                         </select>
                                     </div>
 

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('empno');
             $table->string('type');
+            $table->boolean('status')->nullable();
             $table->timestamps();
         });
     }

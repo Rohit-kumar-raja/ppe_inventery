@@ -13,6 +13,7 @@ class SupervisorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public $page_name = 'Supervisor';
     public function index()
     {
         $supervisor = Worker::get();
@@ -24,7 +25,7 @@ class SupervisorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function save(Request $request)
     {
         $supervisor = new Worker;
         $supervisor->name = $request->name;
@@ -35,7 +36,7 @@ class SupervisorController extends Controller
         $supervisor->type = "supervisor";
         $supervisor->description = $request->description;
         $supervisor->save();
-        return redirect('/supervisor/index');
+        return redirect('/supervisor/index')->with('save',$this->page_name.' Added Successfully !!! ');
     }
 
     /**
@@ -89,7 +90,7 @@ class SupervisorController extends Controller
         $supervisor->empno = $request->empno;
         $supervisor->description = $request->description;
         $supervisor->save();
-        return redirect('/supervisor/index');
+        return redirect('/supervisor/index')->with('update',$this->page_name.' Updated Successfully');
     }
 
 
@@ -104,7 +105,7 @@ class SupervisorController extends Controller
     {
         $supervisor = Worker::where('id',$id)->first();
         $supervisor->delete();
-        return redirect('/supervisor/index');
+        return redirect('/supervisor/index')->with('delete',$this->page_name.' Deleted Successfully');
 
     }
 }

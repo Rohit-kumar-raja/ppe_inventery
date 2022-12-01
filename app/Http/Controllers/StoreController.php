@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class StoreController extends Controller
 {
+    public $page_name = 'Store';
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +15,7 @@ class StoreController extends Controller
      */
     public function index()
     {
-        return view('store.index',['store' =>  Store::get()]);
+        return view('store.index', ['store' =>  Store::get(), 'page' => $this->page_name]);
     }
 
     /**
@@ -24,13 +25,8 @@ class StoreController extends Controller
      */
     public function save(Request $request)
     {
-        $store = new Store;
-        $store->name = $request->name;
-        $store->address = $request->address;
-        $store->description = $request->description;
-        $store->status = $request->status;
-        $store->save();
-        return redirect('/store/index');
+        Store::insert($request->except('_token'));
+        return redirect('/store/index')->with('store',$this->page_name.' Added Successfully !!! ');;
     }
 
     /**
@@ -39,15 +35,15 @@ class StoreController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request , $id)
+    public function update(Request $request, $id)
     {
-        $store = Store::where('id',$id)->first();
+        $store = Store::where('id', $id)->first();
         $store->name = $request->name;
         $store->address = $request->address;
         $store->description = $request->description;
         $store->status = $request->status;
         $store->save();
-        return redirect('/store/index');
+        return redirect('/store/index')->with('update',$this->page_name.' Updated Successfully !!! ');;
     }
 
     /**
@@ -67,10 +63,10 @@ class StoreController extends Controller
      * @param  \App\Models\Store  $store
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request,$id)
+    public function edit(Request $request, $id)
     {
-        $store = Store::where('id',$id)->first();
-        return view('store.edit',['store' => $store]);
+        $store = Store::where('id', $id)->first();
+        return view('store.edit', ['store' => $store, 'page' => $this->page_name]);
     }
 
     /**
@@ -80,10 +76,7 @@ class StoreController extends Controller
      * @param  \App\Models\Store  $store
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Store $store)
-    {
-        //
-    }
+   
 
     /**
      * Remove the specified resource from storage.
@@ -91,10 +84,10 @@ class StoreController extends Controller
      * @param  \App\Models\Store  $store
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request , $id)
+    public function destroy($id)
     {
-        $store = Store::where('id',$id)->first();
+        $store = Store::where('id', $id)->first();
         $store->delete();
-        return redirect('/store/index');
+        return redirect('/store/index')->with('delete',$this->page_name.' Deleted Successfully !!! ');;
     }
 }

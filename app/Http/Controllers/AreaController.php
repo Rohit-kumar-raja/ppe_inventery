@@ -12,6 +12,7 @@ class AreaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public $page_name = 'Area';
     public function index()
     {
         $area = area::get();
@@ -32,7 +33,7 @@ class AreaController extends Controller
         $area->email = $request->email;
         $area->description = $request->description;
         $area->save();
-        return redirect('area/index');
+        return redirect('area/index')->with('save',$this->page_name.' Added Successfully !!! ');
     }
 
     /**
@@ -85,7 +86,7 @@ class AreaController extends Controller
         $area->email = $request->email;
         $area->description = $request->description;
         $area->save();
-        return redirect('/area/index');
+        return redirect('/area/index')->with('update',$this->page_name.' Updated Successfully !!! ');
     }
 
     /**
@@ -98,6 +99,6 @@ class AreaController extends Controller
     {
         $area = area::where('id',$id)->first();
         $area->delete();
-        return redirect('/area/index');
+        return redirect('/area/index')->with('delete',$this->page_name.' Deleted Successfully !!! ');;
     }
 }
