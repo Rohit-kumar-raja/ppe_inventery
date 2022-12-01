@@ -46,7 +46,7 @@
                                     <tr class="ligth">
                                         <th>S.no</th>
                                         <th>Name</th>
-                                        <th>Area</th>
+                                        <th>Email</th>
                                         <th>City</th>
                                         <th>State</th>
                                         <th>Pincode</th>
@@ -62,8 +62,8 @@
                                             <td>{{ $admin->city }}</td>
                                             <td>{{ $admin->state }}</td>
                                             <td>{{ $admin->pincode }}</td>
-                                            <td>
-                                                <div class="d-flex align-items-center list-action">
+                                            <td >
+                                                <div class="d-flex align-items-center list-action text-center ">
                                                     <a class="badge badge-info mr-2" data-toggle="modal"
                                                         data-target="#myModal_view{{ $admin->id }}"><i
                                                             class="fa fa-eye  mr-0"></i></a>

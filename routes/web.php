@@ -14,6 +14,7 @@ use App\Http\Controllers\SupervisorController;
 use App\Http\Controllers\WorkerController;
 use App\Models\ppe;
 use App\Models\Supervisor;
+use PHPUnit\TextUI\XmlConfiguration\Group;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,8 @@ use App\Models\Supervisor;
 // 
 
 
+require __DIR__ . '/auth.php';
+Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -51,7 +54,7 @@ use App\Models\Supervisor;
     Route::post('/ppe/save', [PpeController::class, 'create'])->name('ppe.save');
     Route::get('/ppe/edit/{id}', [PpeController::class, 'edit'])->name('ppe.edit');
     Route::post('/ppe/update/{id}', [PpeController::class, 'update'])->name('ppe.update');
-    Route::get('/ppe/destroy/{id}',[PpeController::class,'destroy'])->name('ppe.destroy');
+    Route::get('/ppe/destroy/{id}', [PpeController::class, 'destroy'])->name('ppe.destroy');
 
     // area route
     Route::get('/area/index', [AreaController::class, 'index'])->name('area');
@@ -75,11 +78,11 @@ use App\Models\Supervisor;
     Route::get('/supervisor/delete/{id}', [SupervisorController::class, 'destroy'])->name('supervisor.destroy');
 
     // category route
-    Route::get('/category/index',[CategoryController::class,'index'])->name('category');
-    Route::post('/category/create',[CategoryController::class,'create'])->name('category.save');
-    Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
-    Route::post('/category/update/{id}',[CategoryController::class,'update'])->name('category.update');
-    Route::get('/category/destroy/{id}',[CategoryController::class,'destroy'])->name('category.destroy');
+    Route::get('/category/index', [CategoryController::class, 'index'])->name('category');
+    Route::post('/category/create', [CategoryController::class, 'create'])->name('category.save');
+    Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
+    Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('category.update');
+    Route::get('/category/destroy/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
 
     // admin route
     Route::get('/admin/list', [adminController::class, 'index'])->name('admin');
@@ -101,10 +104,10 @@ use App\Models\Supervisor;
     Route::get('/admin/list/edit/{id}', [AdminController::class, 'edit'])->name('admin.edit');
     Route::post('/admin/list/save/{id}', [AdminController::class, 'update'])->name('admin.update');
     Route::get('/admin/delete/{id}', [AdminController::class, 'destroy'])->name('admin.delete');
-    
+
     Route::get('/admin/role/list', [AdminRoleController::class, 'index'])->name('admin.role');
     Route::post('/admin/role/save', [AdminRoleController::class, 'save'])->name('admin.role.save');
     Route::get('/admin/role/list/edit/{id}', [AdminRoleController::class, 'edit'])->name('admin.role.edit');
     Route::post('/admin/role/list/save/{id}', [AdminRoleController::class, 'update'])->name('admin.role.update');
     Route::get('/admin/role/delete/{id}', [AdminRoleController::class, 'destroy'])->name('admin.role.delete');
-
+});
