@@ -29,9 +29,6 @@
                             <span class="ml-4">Dashboards</span>
                         </a>
                     </li>
-
-
-
                     <li class=" ">
                         <a href="#setup" class="collapsed" data-toggle="collapse" aria-expanded="false">
                             <i class="fab fa-stack-overflow"></i>
@@ -51,11 +48,11 @@
                             </li>
                             <li class="">
                                 <a href="{{ route('store') }}">
-                                    <i class="las la-minus"></i><span> List</span>
+                                    <i class="las la-minus"></i><span> Store</span>
                                 </a>
                             </li>
                             <li class="">
-                                <a href="/area/index">
+                                <a href="{{ route('area') }}">
                                     <i class="las la-minus"></i><span> Area</span>
                                 </a>
                             </li>
@@ -75,11 +72,7 @@
                             </svg>
                         </a>
                         <ul id="admin" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                            {{-- <li class="">
-                            <a href="{{ route('admin.role')}}">
-                                <i class="las la-minus"></i><span>Admin Role </span>
-                            </a>
-                        </li> --}}
+                     
                             <li class="">
                                 <a href="{{ route('admin') }}">
                                     <i class="las la-minus"></i><span> Admin</span>
