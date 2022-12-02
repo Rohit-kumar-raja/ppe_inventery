@@ -105,9 +105,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/admin/list/save/{id}', [AdminController::class, 'update'])->name('admin.update');
     Route::get('/admin/delete/{id}', [AdminController::class, 'destroy'])->name('admin.delete');
 
-    Route::get('/admin/role/list', [AdminRoleController::class, 'index'])->name('admin.role');
-    Route::post('/admin/role/save', [AdminRoleController::class, 'save'])->name('admin.role.save');
-    Route::get('/admin/role/list/edit/{id}', [AdminRoleController::class, 'edit'])->name('admin.role.edit');
-    Route::post('/admin/role/list/save/{id}', [AdminRoleController::class, 'update'])->name('admin.role.update');
-    Route::get('/admin/role/delete/{id}', [AdminRoleController::class, 'destroy'])->name('admin.role.delete');
+    // Route::get('/admin/role/list', [AdminRoleController::class, 'index'])->name('admin.role');
+    // Route::post('/admin/role/save', [AdminRoleController::class, 'save'])->name('admin.role.save');
+    // Route::get('/admin/role/list/edit/{id}', [AdminRoleController::class, 'edit'])->name('admin.role.edit');
+    // Route::post('/admin/role/list/save/{id}', [AdminRoleController::class, 'update'])->name('admin.role.update');
+    // Route::get('/admin/role/delete/{id}', [AdminRoleController::class, 'destroy'])->name('admin.role.delete');
 });

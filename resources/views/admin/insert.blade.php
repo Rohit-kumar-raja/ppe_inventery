@@ -1,10 +1,10 @@
 <!-- The Modal -->
 <div class="modal fade" id="myModal">
-    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">
-                <h6 class="modal-title">Add {{ $page}}</h6>
+                <h6 class="modal-title">Add {{ $page }}</h6>
                 <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
             <!-- Modal body -->
@@ -24,58 +24,99 @@
                         </div>
 
                         <div class="col-sm-6">
-                            <label>phone:</label>
+                            <label>Phone:</label>
                             <input type="text" class="form-control" placeholder="Enter phone" name="phone">
                         </div>
 
                         <div class="col-sm-6">
-                            <label>District:</label>
-                            <input type="text" class="form-control" placeholder="Enter District" name="discrict">
+                            <label>Type Of Admin:</label>
+                            <select class="form-control"name="type">
+                                <option selected disabled> -Select- </option>
+                                @foreach ($types as $type)
+                                    <option value="{{ $type->type }}">{{ $type->type }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Select for Admin:</label>
+                            <select type="text" class="form-control" name="worker_id"> 
+                                <option selected disabled > - Select - </option>
+                            </select>
                         </div>
 
                         <div class="col-sm-6">
-                            <label>State:</label>
-                            <input type="text" class="form-control" placeholder="Enter State" name="state">
+                            <label>Pasword :</label>
+                            <input type="text" class="form-control" placeholder="Enter Password" name="password">
                         </div>
-
-
                         <div class="col-sm-6">
-                            <label>Pincode:</label>
-                            <input type="number" class="form-control" placeholder="Enter Pincode" name="pincode">
+                            <label> Confirm Pasword :</label>
+                            <input type="password" class="form-control" placeholder="Enter Confirm Password"
+                                name="confirmation_password">
                         </div>
-
-                        <div class="col-sm-6">
-                            <label>Phone:</label>
-                            <input type="number" class="form-control" placeholder="Enter Phone" name="phone">
-                        </div>
-
-                        <div class="col-sm-6">
-                            <label>Mobile:</label>
-                            <input type="tel" class="form-control" placeholder="Enter Mobile" name="mobile">
-                        </div>
-
-                        <div class="col-sm-6">
-                            <label>Email:</label>
-                            <input type="email" class="form-control" placeholder="Enter Email" name="email">
-                        </div>
-
-
-                        <div class="col-sm-6">
-                            <label>Website:</label>
-                            <input type="url" class="form-control" placeholder="Enter Website" name="website">
-                        </div>
-
-                        <div class="col-sm-6">
-                            <label>TIN:</label>
-                            <input type="text" class="form-control" placeholder="Enter TIN" name="tin">
-                        </div>
-
-                        <div class="col-sm-6">
-                            <label>PAN:</label>
-                            <input type="text" class="form-control" placeholder="Enter PAN" name="pan">
-                        </div>
-
                     </div>
+                    <hr>
+                    <h2 class="title border bg-warning text-center rounded-pill p-1">All Permissions</h2>
+                    <hr>
+                    <div class="card-body">
+                        <!-- Minimal style -->
+                        <div class="row">
+                            @foreach ($all_routes as $route)
+                                <div class="col-sm-6">
+                                    <div class="col-sm-12">
+                                        <div class="card card-primary">
+                                            <div class="border text-center bg-primary">
+                                                <h4 class="card-title pt-2">{{ $route->getName() }}</h4>
+                                            </div>
+                                            <div class="card-body ">
+                                                <!-- Minimal style -->
+                                                <div class="row">
+
+                                                    <div class="col-sm-6">
+                                                        <!-- checkbox -->
+                                                        <div class="icheck-primary ">
+                                                            <input type="checkbox" id="checkboxPrimary1_1"
+                                                                name="permission[]" value="3_1">
+                                                            <label for="checkboxPrimary1_1">Show</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <!-- checkbox -->
+
+                                                        <div class="icheck-primary ">
+                                                            <input type="checkbox" id="checkboxPrimary1_1"
+                                                                name="permission[]" value="3_1">
+                                                            <label for="checkboxPrimary1_1">Edit</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <!-- checkbox -->
+
+                                                        <div class="icheck-primary ">
+                                                            <input type="checkbox" id="checkboxPrimary1_1"
+                                                                name="permission[]" value="3_1">
+                                                            <label for="checkboxPrimary1_1">Delete</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <!-- checkbox -->
+
+                                                        <div class="icheck-primary ">
+                                                            <input type="checkbox" id="checkboxPrimary1_1"
+                                                                name="permission[]" value="3_1">
+                                                            <label for="checkboxPrimary1_1">Status</label>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+
                     <hr>
 
                     <div class="col-sm-12 text-center p-2">
