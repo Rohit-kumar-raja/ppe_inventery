@@ -7,11 +7,14 @@ use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DesignationController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\PpeController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\SupervisorController;
 use App\Http\Controllers\WorkerController;
+use App\Models\Designation;
 use App\Models\ppe;
 use App\Models\Supervisor;
 use PHPUnit\TextUI\XmlConfiguration\Group;
@@ -29,8 +32,8 @@ use PHPUnit\TextUI\XmlConfiguration\Group;
 // 
 
 
-require __DIR__ . '/auth.php';
-Route::group(['middleware' => 'auth'], function () {
+    require __DIR__ . '/auth.php';
+    Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -64,18 +67,18 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/area/delete/{id}', [AreaController::class, 'destroy'])->name('area.destroy');
 
     // worker route
-    Route::get('/worker/index', [WorkerController::class, 'index'])->name('worker');
-    Route::post('/worker/save', [WorkerController::class, 'create'])->name('worker.save');
-    Route::get('/worker/edit/{id}', [WorkerController::class, 'edit'])->name('worker.edit');
-    Route::post('/worker/update/{id}', [WorkerController::class, 'update'])->name('worker.update');
-    Route::get('/worker/delete/{id}', [WorkerController::class, 'destroy'])->name('worker.destroy');
+    // Route::get('/worker/index', [WorkerController::class, 'index'])->name('worker');
+    // Route::post('/worker/save', [WorkerController::class, 'create'])->name('worker.save');
+    // Route::get('/worker/edit/{id}', [WorkerController::class, 'edit'])->name('worker.edit');
+    // Route::post('/worker/update/{id}', [WorkerController::class, 'update'])->name('worker.update');
+    // Route::get('/worker/delete/{id}', [WorkerController::class, 'destroy'])->name('worker.destroy');
 
     // supervisor route
-    Route::get('/supervisor/index', [SupervisorController::class, 'index'])->name('supervisor');
-    Route::post('/supervisor/create', [SupervisorController::class, 'save'])->name('supervisor.save');
-    Route::get('/supervisor/edit/{id}', [SupervisorController::class, 'edit'])->name('supervisor.edit');
-    Route::post('/supervisor/update/{id}', [SupervisorController::class, 'update'])->name('supervisor.update');
-    Route::get('/supervisor/delete/{id}', [SupervisorController::class, 'destroy'])->name('supervisor.destroy');
+    // Route::get('/supervisor/index', [SupervisorController::class, 'index'])->name('supervisor');
+    // Route::post('/supervisor/create', [SupervisorController::class, 'save'])->name('supervisor.save');
+    // Route::get('/supervisor/edit/{id}', [SupervisorController::class, 'edit'])->name('supervisor.edit');
+    // Route::post('/supervisor/update/{id}', [SupervisorController::class, 'update'])->name('supervisor.update');
+    // Route::get('/supervisor/delete/{id}', [SupervisorController::class, 'destroy'])->name('supervisor.destroy');
 
     // category route
     Route::get('/category/index', [CategoryController::class, 'index'])->name('category');
@@ -91,13 +94,26 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/admin/list/save/{id}', [adminController::class, 'update'])->name('admin.update');
     Route::get('/admin/destroy/{id}', [adminController::class, 'destroy'])->name('admin.delete');
 
-
     // feedback route
     Route::get('/feedback/index',[FeedbackController::class,'index']);
     Route::post('/feedback/save',[FeedbackController::class,'save']);
     Route::get('/feedback/destroy/{id}',[FeedbackController::class,'destroy']);
-
     
+    // designation
+    Route::get('/designation/index',[DesignationController::class,'index']);
+    Route::post('/designation/save',[DesignationController::class,'store']);
+    Route::get('/designation/edit/{id}',[DesignationController::class,'edit']);
+    Route::post('/designation/update/{id}',[DesignationController::class,'update']);
+    Route::get('/designation/delete/{id}',[DesignationController::class,'destroy']);
+
+    // employee
+    Route::get('/employee/index',[EmployeeController::class,'index']);
+    Route::get('/employee/add',[EmployeeController::class,'create']);
+    Route::post('/employee/store',[EmployeeController::class,'store']);
+    Route::get('/employee/edit/{id}',[EmployeeController::class,'edit']);
+    Route::post('/employee/update/{id}',[EmployeeController::class,'update']);
+
+
     // admin route
     Route::get('/admin/list', [AdminController::class, 'index'])->name('admin');
     Route::post('/admin/save', [AdminController::class, 'save'])->name('admin.save');

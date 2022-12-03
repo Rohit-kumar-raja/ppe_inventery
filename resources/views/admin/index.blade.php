@@ -47,9 +47,9 @@
                                         <th>S.no</th>
                                         <th>Name</th>
                                         <th>Email</th>
-                                        <th>City</th>
-                                        <th>State</th>
-                                        <th>Pincode</th>
+                                        <th>Phone</th>
+                                        <th>Type</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -58,10 +58,10 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $admin->name }}</td>
-                                            <td>{{ $admin->area }}</td>
-                                            <td>{{ $admin->city }}</td>
-                                            <td>{{ $admin->state }}</td>
-                                            <td>{{ $admin->pincode }}</td>
+                                            <td>{{ $admin->email }}</td>
+                                            <td>{{ $admin->phone }}</td>
+                                            <td>{{ $admin->type }}</td>
+                                            <td>{{ $admin->status }}</td>
                                             <td >
                                                 <div class="d-flex align-items-center list-action text-center ">
                                                     <a class="badge badge-info mr-2" data-toggle="modal"
@@ -85,12 +85,12 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <th>S.no</th>
+                                    <th>S.no</th>
                                         <th>Name</th>
-                                        <th>Area</th>
-                                        <th>City</th>
-                                        <th>State</th>
-                                        <th>Pincode</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Type</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>
