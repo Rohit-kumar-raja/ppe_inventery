@@ -100,7 +100,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/designation/delete/{id}', [DesignationController::class, 'destroy'])->name('designation.destroy');
 
     // employee
-    Route::get('/employee/index', [EmployeeController::class, 'index'])->name('employee');
+    Route::get('/employee/index/{designation_id}', [EmployeeController::class, 'index'])->name('employee');
     Route::get('/employee/add', [EmployeeController::class, 'create'])->name('employee.save');
     Route::post('/employee/store', [EmployeeController::class, 'store']);
     Route::get('/employee/edit/{id}', [EmployeeController::class, 'edit'])->name('employee.edit');

@@ -13,10 +13,10 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($designation_id)
     {
-        $employee = Employee::get();
-        return view('/employee/index',['employee' => $employee]);
+        $employee = Employee::where('designation_id',$designation_id)->get();
+        return view('/employee/index',['employee' => $employee,'page'=>$designation_id]);
     }
 
     /**

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('designation_id');
             $table->string('empid');
             $table->string('area');
             $table->string('name');
@@ -25,17 +26,15 @@ return new class extends Migration
             $table->string('maritalstatus');
             $table->date('dob');
             $table->string('placebirth');
-            $table->string('qualification');
-            $table->string('exp');
-            $table->string('lastcompany');
-            
-
+            $table->string('qualification')->nullable();
+            $table->string('exp')->default(0);
+            $table->string('lastcompany')->nullable();
             $table->string('photo')->nullable();       ;
             $table->string('adhar')->nullable();       ;
             $table->string('pan')->nullable();       ;
             $table->string('passbook')->nullable();       ;
-
             $table->boolean('status')->default(1);
+            $table->foreign('designation_id')->references('id')->on('designations');
             $table->timestamps();
         });
     }
