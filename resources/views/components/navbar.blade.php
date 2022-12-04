@@ -138,9 +138,13 @@
                                             <div class="p-3">
                                                 <h5 class="mb-1">{{ Auth::user()->email }}</h5>
                                                 <p class="mb-0">{{ Auth::user()->name }}</p>
-                                                <div class="d-flex align-items-center justify-content-center mt-3">
-                                                    <a href="auth-sign-in.php" class="btn border">Sign Out</a>
-                                                </div>
+                                                <form method="POST" action="{{ route('logout') }}">
+                                                    @csrf
+                                                    <div class="d-flex align-items-center justify-content-center mt-3">
+                                                        <button type="submit" class="btn border">Sign Out</button>
+                                                    </div>
+                                                </form>
+
                                             </div>
                                         </div>
                                     </div>

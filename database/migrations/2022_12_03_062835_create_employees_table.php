@@ -35,7 +35,7 @@ return new class extends Migration
             $table->string('pan')->nullable();       ;
             $table->string('passbook')->nullable();       ;
 
-            $table->boolean('status')->nullable();
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }
