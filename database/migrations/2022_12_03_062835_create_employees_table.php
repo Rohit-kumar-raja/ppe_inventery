@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('designation_id');
+            $table->unsignedBigInteger('area_id');
             $table->string('empid');
             $table->string('area');
             $table->string('name');
@@ -35,6 +36,8 @@ return new class extends Migration
             $table->string('passbook')->nullable();       ;
             $table->boolean('status')->default(1);
             $table->foreign('designation_id')->references('id')->on('designations');
+            $table->foreign('area_id')->references('id')->on('areas');
+
             $table->timestamps();
         });
     }
