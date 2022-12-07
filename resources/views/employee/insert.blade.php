@@ -33,7 +33,13 @@
 
                         <div class="col-sm-4">
                             <label>Area:</label>
-                            <input type="text" class="form-control"  placeholder="Enter Area" name=" area">
+                            <!-- <input type="text" class="form-control"  placeholder="Enter Area" name=" area"> -->
+                            <select name="area" class="form-control">
+                                <option selected disabled>Select Area</option>
+                                @foreach($areas as $area)
+                                <option value="{{ $area->id }}">{{ $area->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <div class="col-sm-4">
@@ -53,7 +59,12 @@
 
                         <div class="col-sm-4">
                             <label>Marital Status:</label>
-                            <input type="text" class="form-control"  placeholder="Enter Marital Status" name=" maritalstatus">
+                            {{-- <input type="text" class="form-control"  placeholder="Enter Marital Status" name=" maritalstatus"> --}}
+                            <select name="maritalstatus" class="form-control">
+                                <option selected value="">Select Marital Status</option>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                            </select>
                         </div> 
 
                         <div class="col-sm-4">
@@ -80,6 +91,28 @@
                             <label>Last Company:</label>
                             <input type="text" class="form-control"  placeholder="Enter Last Company" name=" lastcompany">
                         </div> 
+
+
+
+
+                        <div class="col-sm-4">
+                            <label>PAN NO:</label>
+                            <input type="text" class="form-control"  placeholder="Enter PAN NO" name=" pan_no">
+                        </div> 
+
+                        <div class="col-sm-4">
+                            <label> Adhar No:</label>
+                            <input type="number" class="form-control"  placeholder="Enter Adhar No" name=" adhar_no">
+                        </div> 
+
+                        <div class="col-sm-4">
+                            <label> Bank Name:</label>
+                            <input type="text" class="form-control"  placeholder="Enter Bank Name" name=" bank_name">
+                        </div> 
+
+
+
+
 
                         <div class="col-sm-4">
                             <label>Photo:</label>

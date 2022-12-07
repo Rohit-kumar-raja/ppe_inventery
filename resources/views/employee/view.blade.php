@@ -45,7 +45,11 @@
 
                         <div class="col-sm-4">
                             <label>Marital Status:</label>
-                            <input type="text" class="form-control" placeholder="Enter Marital Status" name=" maritalstatus" readonly value="{{$employee->maritalstatus}}"> 
+                            {{-- <input type="text" class="form-control" placeholder="Enter Marital Status" name=" maritalstatus" readonly value="{{$employee->maritalstatus}}">  --}}
+                            <select name="maritalstatus" class="form-control">
+                                <option selected readonly value="{{ $employee->maritalstatus }}">{{ $employee->maritalstatus }}</option>
+                               
+                            </select>
                         </div>
 
                         <div class="col-sm-4">
@@ -74,8 +78,29 @@
                         </div>
 
                         <div class="col-sm-4">
+                            <label>PAN NO:</label>
+                            <input type="text" class="form-control"  placeholder="Enter PAN NO" name=" pan_no" value="{{ $employee->pan_no }}" readonly>
+                        </div> 
+
+                        <div class="col-sm-4">
+                            <label> Adhar No:</label>
+                            <input type="number" class="form-control"  placeholder="Enter Adhar No" name=" adhar_no" value="{{ $employee->adhar_no }}" readonly>
+                        </div> 
+
+                        <div class="col-sm-4">
+                            <label> Bank Name:</label>
+                            <input type="text" class="form-control"  placeholder="Enter Bank Name" name=" bank_name" value="{{ $employee->bank_name }}" readonly>
+                        </div> 
+
+                        <div class="col-sm-4">
+                            <label> Bank Act No:</label>
+                            <input type="number" class="form-control"  placeholder="Enter Bank Act No" name=" back_act_num" value="{{ $employee->back_act_num }}" readonly>
+                        </div> 
+
+
+                        <div class="col-sm-4">
                             <label>Photo:</label>
-                            <input type="file" class="form-control-file border" name=" photo">
+                            <input type="file" class="form-control-file border" name=" photo" >
                         </div>
 
                         <div class="col-sm-4">

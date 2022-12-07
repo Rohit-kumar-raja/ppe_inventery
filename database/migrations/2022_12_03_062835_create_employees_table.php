@@ -28,6 +28,11 @@ return new class extends Migration
             $table->string('qualification');
             $table->string('exp');
             $table->string('lastcompany');
+
+            $table->string('pan_no')->nullable();
+            $table->string('adhar_no')->nullable();
+            $table->string('bank_name')->nullable();
+            $table->string('back_act_num')->nullable();
             
 
             $table->string('photo')->nullable();       ;

@@ -112,6 +112,7 @@ use PHPUnit\TextUI\XmlConfiguration\Group;
     Route::post('/employee/store',[EmployeeController::class,'store']);
     Route::get('/employee/edit/{id}',[EmployeeController::class,'edit']);
     Route::post('/employee/update/{id}',[EmployeeController::class,'update']);
+    Route::get('/employee/delete/{id}',[EmployeeController::class,'destroy']);
 
 
     // admin route
