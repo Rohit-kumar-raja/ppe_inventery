@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\ppe;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class PpeController extends Controller
     public $page_name = 'PPE';
     public function index()
     {
-        return view('ppe.index',['ppe' =>  Ppe::get()]);
+        return view('ppe.index',['ppe' =>  Ppe::get() , 'category' => Category::get()]);
     }
 
     /**
@@ -24,13 +25,10 @@ class PpeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create(Request $request)
     {
-        $ppe = new ppe;
-        $ppe->name = $request->name;
-        $ppe->description = $request->description;
-        $ppe->status = $request->status;
-        $ppe->save();
+        ppe::insert($request->except('_token'));               
         return redirect('/ppe/index')->with('save',$this->page_name.' Inserted Successfully !!!');
     }
 
@@ -40,6 +38,7 @@ class PpeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
         //
@@ -65,7 +64,7 @@ class PpeController extends Controller
     public function edit(Request $request,$id)
     {
         $ppe = ppe::where('id',$id)->first();
-        return view('ppe.edit',['ppe'=>$ppe]);
+        return view('ppe.edit',['ppe'=>$ppe , 'category'=> Category::get()]);
     }
 
     /**

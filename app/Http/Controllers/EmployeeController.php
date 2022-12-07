@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use App\Http\Controllers\Controller;
+use App\Models\Area;
+use App\Models\Designation;
 use Illuminate\Http\Request;
+use App\Models\Area;
 
 class EmployeeController extends Controller
 {
@@ -13,10 +16,10 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($designation_id)
+    public function index()
     {
-        $employee = Employee::where('designation_id',$designation_id)->get();
-        return view('/employee/index',['employee' => $employee,'page'=>$designation_id]);
+        $employee = Employee::get();
+        return view('/employee/index',['employee' => $employee]);
     }
 
     /**
@@ -24,7 +27,7 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($designation_id)
     {
         $employee = employee::get();
         return view('/employee/insert');
@@ -81,8 +84,8 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        $employee = employee::where('id',$id)->first();
-        return view('/employee/edit',['employee' => $employee]);
+        $employee = employee::where('id', $id)->first();
+        return view('/employee/edit', ['employee' => $employee]);
     }
 
     /**
@@ -94,7 +97,7 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $employee = employee::where('id',$id)->first();
+        $employee = employee::where('id', $id)->first();
         $employee->empid = $request->empid;
         $employee->area = $request->area;
         $employee->name = $request->name;
@@ -124,8 +127,10 @@ class EmployeeController extends Controller
      * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Employee $employee)
+    public function destroy($id)
     {
-        //
+        $employee = Employee::where('id',$id)->first();
+        $employee->delete();
+        return redirect('employee/index');
     }
 }
