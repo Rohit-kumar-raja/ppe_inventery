@@ -11,6 +11,7 @@ use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\PpeController;
+use App\Http\Controllers\PppRequestController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\SupervisorController;
 use App\Http\Controllers\WorkerController;
@@ -115,6 +116,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/delete/{id}', [AdminController::class, 'destroy'])->name('admin.delete');
     Route::get('/admin/status/{id}', [AdminController::class, 'status'])->name('admin.status');
 
+    Route::get('/ppe/request/list', [PppRequestController::class, 'index'])->name('ppe_request');
+    Route::post('/ppe/request/save', [PppRequestController::class, 'store'])->name('ppe_request.save');
+    Route::get('/ppe/request/list/edit/{id}', [PppRequestController::class, 'edit'])->name('ppe_request.edit');
+    Route::post('/ppe/request/list/save/{id}', [PppRequestController::class, 'update'])->name('ppe_request.update');
+    Route::get('/ppe/request/delete/{id}', [PppRequestController::class, 'destroy'])->name('ppe_request.delete');
+    Route::get('/ppe/request/status/{id}', [PppRequestController::class, 'status'])->name('ppe_request.status');
 
     // Route::get('/admin/role/list', [AdminRoleController::class, 'index'])->name('admin.role');
     // Route::post('/admin/role/save', [AdminRoleController::class, 'save'])->name('admin.role.save');
