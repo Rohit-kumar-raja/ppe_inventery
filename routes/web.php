@@ -32,8 +32,8 @@ use PHPUnit\TextUI\XmlConfiguration\Group;
 // 
 
 
-    require __DIR__ . '/auth.php';
-    Route::group(['middleware' => 'auth'], function () {
+require __DIR__ . '/auth.php';
+Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -87,40 +87,43 @@ use PHPUnit\TextUI\XmlConfiguration\Group;
     Route::post('/category/update/{id}', [CategoryController::class, 'update'])->name('category.update');
     Route::get('/category/destroy/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
 
-    // admin route
-    Route::get('/admin/list', [adminController::class, 'index'])->name('admin');
-    Route::post('/admin/save', [adminController::class, 'save'])->name('admin.save');
-    Route::get('/admin/list/edit/{id}', [adminController::class, 'edit'])->name('admin.edit');
-    Route::post('/admin/list/save/{id}', [adminController::class, 'update'])->name('admin.update');
-    Route::get('/admin/destroy/{id}', [adminController::class, 'destroy'])->name('admin.delete');
-
     // feedback route
-    Route::get('/feedback/index',[FeedbackController::class,'index']);
-    Route::post('/feedback/save',[FeedbackController::class,'save']);
-    Route::get('/feedback/destroy/{id}',[FeedbackController::class,'destroy']);
-    
+    Route::get('/feedback/index', [FeedbackController::class, 'index'])->name('feedback');
+    Route::post('/feedback/save', [FeedbackController::class, 'save'])->name('feedback.save');
+    Route::get('/feedback/destroy/{id}', [FeedbackController::class, 'destroy'])->name('feedback.destroy');
+
     // designation
-    Route::get('/designation/index',[DesignationController::class,'index']);
-    Route::post('/designation/save',[DesignationController::class,'store']);
-    Route::get('/designation/edit/{id}',[DesignationController::class,'edit']);
-    Route::post('/designation/update/{id}',[DesignationController::class,'update']);
-    Route::get('/designation/delete/{id}',[DesignationController::class,'destroy']);
+    Route::get('/designation/index', [DesignationController::class, 'index'])->name('designation');
+    Route::post('/designation/save', [DesignationController::class, 'store'])->name('designation.save');
+    Route::get('/designation/edit/{id}', [DesignationController::class, 'edit'])->name('designation.edit');
+    Route::post('/designation/update/{id}', [DesignationController::class, 'update'])->name('designation.update');
+    Route::get('/designation/delete/{id}', [DesignationController::class, 'destroy'])->name('designation.destroy');
 
     // employee
+<<<<<<< HEAD
     Route::get('/employee/index',[EmployeeController::class,'index']);
     Route::get('/employee/add',[EmployeeController::class,'create']);
     Route::post('/employee/store',[EmployeeController::class,'store']);
     Route::get('/employee/edit/{id}',[EmployeeController::class,'edit']);
     Route::post('/employee/update/{id}',[EmployeeController::class,'update']);
     Route::get('/employee/delete/{id}',[EmployeeController::class,'destroy']);
+=======
+    Route::get('/employee/index/{designation_id}', [EmployeeController::class, 'index'])->name('employee');
+    Route::get('/employee/add/{designation_id}', [EmployeeController::class, 'create'])->name('employee.save');
+    Route::post('/employee/store', [EmployeeController::class, 'store'])->name('company.store');
+    Route::get('/employee/edit/{id}', [EmployeeController::class, 'edit'])->name('employee.edit');
+    Route::post('/employee/update/{id}', [EmployeeController::class, 'update'])->name('employee.update');
+>>>>>>> 1930c2bf03f4874fa9459255f179e10ad4373c49
 
 
     // admin route
     Route::get('/admin/list', [AdminController::class, 'index'])->name('admin');
-    Route::post('/admin/save', [AdminController::class, 'save'])->name('admin.save');
+    Route::post('/admin/save', [AdminController::class, 'store'])->name('admin.save');
     Route::get('/admin/list/edit/{id}', [AdminController::class, 'edit'])->name('admin.edit');
     Route::post('/admin/list/save/{id}', [AdminController::class, 'update'])->name('admin.update');
     Route::get('/admin/delete/{id}', [AdminController::class, 'destroy'])->name('admin.delete');
+    Route::get('/admin/status/{id}', [AdminController::class, 'status'])->name('admin.status');
+
 
     // Route::get('/admin/role/list', [AdminRoleController::class, 'index'])->name('admin.role');
     // Route::post('/admin/role/save', [AdminRoleController::class, 'save'])->name('admin.role.save');

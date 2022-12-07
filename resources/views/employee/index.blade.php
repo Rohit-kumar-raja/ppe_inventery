@@ -10,11 +10,11 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h4 class="card-title">Employee List</h4>
+                            <h4 class="card-title">{{ $page  }} List</h4>
                         </div>
 
 
-                        <a class="btn btn-primary add-list btn-sm text-white" href="/employee/add"><i class="las la-plus mr-3"></i>Add Employee</a>
+                        <a class="btn btn-primary add-list btn-sm text-white" href="{{ route('employee.save',$designation_id) }}"><i class="las la-plus mr-3"></i>Add {{ $page  }}</a>
                     </div>
                     <div class="card-body">
                     @if (session('save'))
