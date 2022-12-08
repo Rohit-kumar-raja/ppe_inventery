@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Area;
 use App\Models\Designation;
 use Illuminate\Http\Request;
-use App\Models\Area;
 
 class EmployeeController extends Controller
 {

@@ -165,7 +165,7 @@
                         </a>
                         <ul id="sale" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                             <li class="">
-                                <a href="../backend/page-add-sale.php">
+                                <a href="{{ route('ppe_request') }}">
                                     <i class="las la-minus"></i><span>Request PPE</span>
                                 </a>
                             </li>

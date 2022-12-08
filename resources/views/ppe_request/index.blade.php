@@ -50,8 +50,6 @@
                             </ul>
                             </div>
                         @endif
-
-
                         <div class="table-responsive">
                             <table id="datatable" class="table data-tables table-striped">
                                 <thead>
@@ -66,17 +64,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($admins as $admin)
+                                    @foreach ($data as $ppe_request)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $admin->name }}</td>
-                                            <td>{{ $admin->email }}</td>
-                                            <td>{{ $admin->phone }}</td>
-                                            <td>{{ $admin->type }}</td>
+                                            <td>{{ $ppe_request->name }}</td>
+                                            <td>{{ $ppe_request->email }}</td>
+                                            <td>{{ $ppe_request->phone }}</td>
+                                            <td>{{ $ppe_request->type }}</td>
 
-                                            <td><a href="{{ route('admin.status', $admin->id) }}"
-                                                    class="btn @if ($admin->status == 1) btn-success @endif btn-secondary  btn-sm">
-                                                    @if ($admin->status == 1)
+                                            <td><a href="{{ route('ppe_request.status', $ppe_request->id) }}"
+                                                    class="btn @if ($ppe_request->status == 1) btn-success @endif btn-secondary  btn-sm">
+                                                    @if ($ppe_request->status == 1)
                                                         Active
                                                     @else
                                                         Deactive
@@ -86,21 +84,21 @@
                                             <td>
                                                 <div class="d-flex align-items-center list-action text-center ">
                                                     <a class="badge badge-info mr-2" data-toggle="modal"
-                                                        data-target="#myModal_view{{ $admin->id }}"><i
+                                                        data-target="#myModal_view{{ $ppe_request->id }}"><i
                                                             class="fa fa-eye  mr-0"></i></a>
                                                     <a class="badge bg-success mr-2" data-toggle="tooltip"
                                                         data-placement="top" title="" data-original-title="Edit"
-                                                        href="{{ route('admin.edit', $admin->id) }}"><i
+                                                        href="{{ route('ppe_request.edit', $ppe_request->id) }}"><i
                                                             class="fas fa-edit  mr-0"></i></a>
                                                     <a class="badge bg-warning mr-2" data-toggle="tooltip"
                                                         data-placement="top" title="" data-original-title="Delete"
-                                                        href="{{ route('admin.delete', $admin->id) }}"><i
+                                                        href="{{ route('ppe_request.delete', $ppe_request->id) }}"><i
                                                             class="fas fa-trash-alt mr-0"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
                                         <!-- The Modal View-->
-                                        @include('admin.view')
+                                        @include('ppe_request.view')
                                         <!-- // the model view end -->
                                     @endforeach
                                 </tbody>
@@ -123,7 +121,7 @@
         </div>
     </div>
 </div>
-@include('admin.insert')
 <!-- // model -->
 <x-foot />
 <x-footer />
+@include('ppe_request.insert')

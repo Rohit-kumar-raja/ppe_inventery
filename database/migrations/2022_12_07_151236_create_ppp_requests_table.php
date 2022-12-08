@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->date('date');
             $table->unsignedBigInteger('store_id');
-            $table->unsignedBigInteger('employee_id');
+            $table->unsignedBigInteger('user_id');
             $table->date('required_by_which_date');
             $table->unsignedBigInteger('approved_by');
             $table->date('approved_date');
@@ -25,8 +25,8 @@ return new class extends Migration
             $table->boolean('status');
             $table->timestamps();
             $table->foreign('store_id')->references('id')->on('stores');
-            $table->foreign('employee_id')->references('id')->on('employees');
-            $table->foreign('approved_by')->references('id')->on('employees');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('approved_by')->references('id')->on('users');
         });
     }
 
