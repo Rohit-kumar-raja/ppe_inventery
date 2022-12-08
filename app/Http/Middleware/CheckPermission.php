@@ -24,10 +24,16 @@ class CheckPermission
             return redirect()->route('login');
         } else {
             if (Auth::user()->type == 'superadmin') {
+
                 return $next($request);
             } else {
-                $request->route()->getName();
-                return $next($request);
+                $route_name =  $request->route()->getName();
+
+                if (check_permission($route_name)) {
+                    return $next($request);
+                } else {
+                    return  redirect()->back();
+                }
             }
         }
     }

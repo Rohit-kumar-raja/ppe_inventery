@@ -16,7 +16,7 @@
         <nav class="iq-sidebar-menu">
             <ul id="iq-sidebar-toggle" class="iq-menu">
                 @if (check_permission('dashboard'))
-                    <li class="">
+                    <li class="{{ Route::is('dashboard') ? 'active' : '' }}">
                         <a href="{{ route('dashboard') }}" class="svg-icon">
                             <svg class="svg-icon" id="p-dash1" width="20" height="20"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -244,7 +244,10 @@
                         </li>
                     </ul>
                 </li> --}}
-                @if (check_permission('reports.daily') || check_permission('reports.weckly') || check_permission('reports.monthly') ||check_permission('reports.yearly') )
+                @if (check_permission('reports.daily') ||
+                    check_permission('reports.weckly') ||
+                    check_permission('reports.monthly') ||
+                    check_permission('reports.yearly'))
                     <li class=" ">
                         <a href="#reports" class="collapsed" data-toggle="collapse" aria-expanded="false">
                             <i class="fas fa-chart-pie"></i>

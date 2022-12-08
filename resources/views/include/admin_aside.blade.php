@@ -13,7 +13,7 @@
     <div class="data-scrollbar" data-scroll="1">
         <nav class="iq-sidebar-menu">
             <ul id="iq-sidebar-toggle" class="iq-menu">
-                <li class="">
+                <li class="{{ Route::is('dashboard') ? 'active' : '' }}">
                     <a href="{{ route('dashboard') }}" class="svg-icon">
                         <svg class="svg-icon" id="p-dash1" width="20" height="20"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -39,17 +39,17 @@
                         </svg>
                     </a>
                     <ul id="setup" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class="active">
+                        <li class="{{ Route::is('company') ? 'active' : '' }}">
                             <a href=" {{ route('company') }}">
                                 <i class="las la-minus"></i><span>Company Profile</span>
                             </a>
                         </li>
-                        <li class="">
+                        <li class="{{ Route::is('store') ? 'active' : '' }}">
                             <a href="{{ route('store') }}">
                                 <i class="las la-minus"></i><span> Store</span>
                             </a>
                         </li>
-                        <li class="">
+                        <li class="{{ Route::is('area') ? 'active' : '' }}">
                             <a href="{{ route('area') }}">
                                 <i class="las la-minus"></i><span> Area</span>
                             </a>
@@ -71,7 +71,7 @@
                     </a>
                     <ul id="admin" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
 
-                        <li class="">
+                        <li class="{{ Route::is('admin') ? 'active' : '' }}">
                             <a href="{{ route('admin') }}">
                                 <i class="las la-minus"></i><span> Admin</span>
                             </a>
@@ -90,14 +90,14 @@
                         </svg>
                     </a>
                     <ul id="product" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class="">
-                            <a href="/category/index">
+                        <li class="{{ Route::is('category') ? 'active' : '' }}">
+                            <a href="{{ route('category') }}">
                                 <i class="las la-minus"></i><span>List Category</span>
                             </a>
                         </li>
 
-                        <li class="">
-                            <a href="/ppe/index">
+                        <li class="{{ Route::is('ppe') ? 'active' : '' }}">
+                            <a href="{{ route('ppe') }}">
                                 <i class="las la-minus"></i><span>List PPE</span>
                             </a>
                         </li>
@@ -123,8 +123,8 @@
                     </a>
                     <ul id="people" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
 
-                        <li class="">
-                            <a href="/designation/index">
+                        <li class="{{ Route::is('designation') ? 'active' : '' }}">
+                            <a href="{{ route('designation') }}">
                                 <i class="las la-minus"></i><span>Designation</span>
                             </a>
                         </li>
@@ -134,7 +134,7 @@
                                 ->get();
                         @endphp
                         @foreach ($designation as $desk)
-                            <li class="">
+                            <li class="{{ Route::is('employee') ? 'active' : '' }}">
                                 <a href="{{ route('employee', $desk->id) }}">
                                     <i class="las la-minus"></i><span>Add {{ $desk->name }}</span>
                                 </a>
@@ -192,12 +192,12 @@
                         </svg>
                     </a>
                     <ul id="purchase" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class="">
+                        <li class="{{ Route::is('purchases') ? 'active' : '' }}">
                             <a href="../backend/page-list-purchase.php">
                                 <i class="las la-minus"></i><span>List Purchases</span>
                             </a>
                         </li>
-                        <li class="">
+                        <li class="{{ Route::is('purchases.save') ? 'active' : '' }}">
                             <a href="../backend/page-add-purchase.php">
                                 <i class="las la-minus"></i><span>Add purchase</span>
                             </a>
@@ -223,12 +223,12 @@
                         </svg>
                     </a>
                     <ul id="return" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class="">
+                        <li class="{{ Route::is('returns') ? 'active' : '' }}">
                             <a href="../backend/page-list-returns.php">
                                 <i class="las la-minus"></i><span>List Returns</span>
                             </a>
                         </li>
-                        <li class="">
+                        <li class="{{ Route::is('returns.save') ? 'active' : '' }}">
                             <a href="../backend/page-add-return.php">
                                 <i class="las la-minus"></i><span>Add Return</span>
                             </a>
@@ -247,22 +247,22 @@
                         </svg>
                     </a>
                     <ul id="reports" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class="">
+                        <li class="{{ Route::is('repoarts.daily') ? 'active' : '' }}">
                             <a href="../backend/page-report.php">
                                 <i class="las la-minus"></i><span>Daily Reports</span>
                             </a>
                         </li>
-                        <li class="">
+                        <li class="{{ Route::is('reports.weeckly') ? 'active' : '' }}">
                             <a href="../backend/page-add-return.php">
                                 <i class="las la-minus"></i><span>Wickly Reports </span>
                             </a>
                         </li>
-                        <li class="">
+                        <li class="{{ Route::is('reports.monthly') ? 'active' : '' }}">
                             <a href="../backend/page-add-return.php">
                                 <i class="las la-minus"></i><span>Monthly Reports </span>
                             </a>
                         </li>
-                        <li class="">
+                        <li class="{{ Route::is('reports.yearly') ? 'active' : '' }}">
                             <a href="../backend/page-add-return.php">
                                 <i class="las la-minus"></i><span>Yearly Reports </span>
                             </a>
@@ -282,8 +282,8 @@
                         <span class="bg-red p-1 rounded-circle ">5</span>
                     </a>
                     <ul id="message" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                        <li class="">
-                            <a href="../backend/feedback.php">
+                        <li class="{{ Route::is('feedback') ? 'active' : '' }}">
+                            <a href="{{ route('feedback') }}">
                                 <i class="las la-minus"></i><span>View feedback</span>
                             </a>
                         </li>

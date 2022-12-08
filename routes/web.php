@@ -34,7 +34,7 @@ use PHPUnit\TextUI\XmlConfiguration\Group;
 
 
 require __DIR__ . '/auth.php';
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth','middleware'=>'permission'], function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
