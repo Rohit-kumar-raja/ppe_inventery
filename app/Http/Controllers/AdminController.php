@@ -6,17 +6,17 @@ use App\Models\Permission;
 use App\Models\User;
 use App\Models\Worker;
 use Exception;
-use Faker\Provider\ar_EG\Person;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
     public $page_name = 'Admin Management';
     public function index()
     {
+        // dd(auth()->user()->can('dashboard'));
         $all_admin = User::all();
         $types = Worker::distinct('type')->get();
         return view('admin.index', [
