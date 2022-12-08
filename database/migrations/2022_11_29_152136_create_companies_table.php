@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('website');
             $table->string('tin');
             $table->string('pan');
-            $table->boolean('status')->nullable();
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

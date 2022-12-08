@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\ppe;
 use Illuminate\Http\Request;
+use App\Models\Store;
 
 
 class PpeController extends Controller
@@ -17,7 +18,9 @@ class PpeController extends Controller
     public $page_name = 'PPE';
     public function index()
     {
-        return view('ppe.index',['ppe' =>  Ppe::get() , 'category' => Category::get()]);
+        $stores = Store::where('status', 1)->get();
+
+        return view('ppe.index', ['ppe' =>  Ppe::get(), 'stores'=>$stores, 'category' => Category::get()]);
     }
 
     /**
@@ -28,8 +31,8 @@ class PpeController extends Controller
 
     public function create(Request $request)
     {
-        ppe::insert($request->except('_token'));               
-        return redirect('/ppe/index')->with('save',$this->page_name.' Inserted Successfully !!!');
+        ppe::insert($request->except('_token'));
+        return redirect('/ppe/index')->with('save', $this->page_name . ' Inserted Successfully !!!');
     }
 
     /**
@@ -61,10 +64,10 @@ class PpeController extends Controller
      * @param  \App\Models\ppe  $ppe
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request,$id)
+    public function edit(Request $request, $id)
     {
-        $ppe = ppe::where('id',$id)->first();
-        return view('ppe.edit',['ppe'=>$ppe , 'category'=> Category::get()]);
+        $ppe = ppe::where('id', $id)->first();
+        return view('ppe.edit', ['ppe' => $ppe, 'category' => Category::get()]);
     }
 
     /**
@@ -74,14 +77,14 @@ class PpeController extends Controller
      * @param  \App\Models\ppe  $ppe
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request , $id)
+    public function update(Request $request, $id)
     {
-        $ppe = ppe::where('id',$id)->first();
+        $ppe = ppe::where('id', $id)->first();
         $ppe->name = $request->name;
         $ppe->description = $request->description;
         $ppe->status = $request->status;
         $ppe->save();
-        return redirect('/ppe/index')->with('update',$this->page_name.' Updated Successfully !!!');
+        return redirect('/ppe/index')->with('update', $this->page_name . ' Updated Successfully !!!');
     }
 
     /**
@@ -92,8 +95,8 @@ class PpeController extends Controller
      */
     public function destroy($id)
     {
-        $ppe = ppe::where('id',$id)->first();
-        $ppe -> delete();
-        return redirect('/ppe/index')->with('delete',$this->page_name.' Deleted Successfully !!!');
+        $ppe = ppe::where('id', $id)->first();
+        $ppe->delete();
+        return redirect('/ppe/index')->with('delete', $this->page_name . ' Deleted Successfully !!!');
     }
 }

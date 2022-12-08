@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('contact');
             $table->string('email');
             $table->text('description');
-            $table->boolean('status')->nullable();
+            $table->boolean('status')->default(1);
 
             $table->timestamps();
         });

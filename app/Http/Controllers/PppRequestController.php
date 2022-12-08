@@ -19,14 +19,14 @@ class PppRequestController extends Controller
      */
     public function index()
     {
-        $store = Store::where('status', 1)->get();
+        $stores = Store::where('status', 1)->get();
         $ppes = ppe::where('status', 1)->get();
         if (Auth::user()->type == "superadmin") {
             $data = PppRequest::all();
         } else {
             $data = PppRequest::where('user_id', Auth::user()->id)->get();
         }
-        return view('ppe_request.index', ['data' => $data, 'store' => $store, 'ppes' => $ppes, 'page' => $this->page_name]);
+        return view('ppe_request.index', ['data' => $data, 'stores' => $stores, 'ppes' => $ppes, 'page' => $this->page_name]);
     }
 
     /**

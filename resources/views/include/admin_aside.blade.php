@@ -56,8 +56,6 @@
                         </li>
                     </ul>
                 </li>
-
-
                 <li class=" ">
                     <a href="#admin" class="collapsed" data-toggle="collapse" aria-expanded="false">
                         <i class="fas fa-users-cog"></i>
@@ -140,9 +138,6 @@
                                 </a>
                             </li>
                         @endforeach
-
-
-
                     </ul>
                 </li>
                 <li class=" ">

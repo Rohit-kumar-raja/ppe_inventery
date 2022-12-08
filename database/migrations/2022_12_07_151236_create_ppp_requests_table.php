@@ -22,7 +22,7 @@ return new class extends Migration
             $table->unsignedBigInteger('approved_by');
             $table->date('approved_date');
             $table->text('description');
-            $table->boolean('status');
+            $table->boolean('status')->default(1);
             $table->timestamps();
             $table->foreign('store_id')->references('id')->on('stores');
             $table->foreign('user_id')->references('id')->on('users');

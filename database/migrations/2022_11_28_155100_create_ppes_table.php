@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('ppes', function (Blueprint $table) {
             $table->id();
-            $table->integer('cat_id');
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('store_id');
             $table->date('date');
             $table->string('name');
             $table->integer('qty');
@@ -34,7 +35,10 @@ return new class extends Migration
             $table->text('description');
             $table->integer('esisn_no');
             $table->date('procurmnt_freq_dt');
-            $table->boolean('status')->nullable();
+            $table->string('image');
+            $table->boolean('status')->default(1);
+            // $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('store_id')->references('id')->on('stores');
             $table->timestamps();
         });
     }

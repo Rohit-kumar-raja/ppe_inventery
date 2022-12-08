@@ -18,10 +18,13 @@
                             <input readonly type="text" class="form-control" placeholder="Enter Name"
                                 value="{{ date('Y-m-d') }}" name="date">
                         </div>
-
                         <div class="col-sm-4">
                             <label>Select Store : </label>
-                            <select type="text" class="form-control" placeholder="Enter email" name="email">
+                            <select type="text" class="form-control" placeholder="Enter email" name="store_id">
+                                <option selected disabled> - Choose Store - </option>
+                                @foreach ($stores as $store)
+                                    <option value="{{ $store->id }}">{{ $store->name }}</option>
+                                @endforeach
                             </select>
                         </div>
 
@@ -59,8 +62,8 @@
                                             placeholder="Subject Name"class="form-control">
 
                                             <option selected disabled> -choose Ppe- </option>
-                                            @foreach ($ppes as $ppe )
-                                                <option value="{{$ppe->id}}">{{$pee->name}} - </option>
+                                            @foreach ($ppes as $ppe)
+                                                <option value="{{ $ppe->id }}">{{ $pee->name }} - </option>
                                             @endforeach
                                         </select></td>
                                     <td width="25%"><input type="text" name="request_qty[]"
