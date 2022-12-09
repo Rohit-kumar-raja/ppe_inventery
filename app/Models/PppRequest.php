@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class PppRequest extends Model
 {
     use HasFactory;
+
+    function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+    public function store()
+    {
+        return $this->belongsTo(Store::class, 'store_id');
+    }
+    public function approved_by()
+    {
+        return $this->belongsTo(User::class, 'approved_by');
+    }
+
 }

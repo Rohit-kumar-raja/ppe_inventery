@@ -44,10 +44,10 @@
                         @if ($errors->any())
                             <div class="alert alert-danger">
                                 <ul>
-                                @foreach ($errors->all() as $error)
-                                   <li> {{ $error }}</li>
-                                @endforeach
-                            </ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li> {{ $error }}</li>
+                                    @endforeach
+                                </ul>
                             </div>
                         @endif
                         <div class="table-responsive">
@@ -55,11 +55,13 @@
                                 <thead>
                                     <tr class="ligth">
                                         <th>S.no</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Type</th>
-                                        <th>Status</th>
+                                        <th >Date</th>
+                                        <th>Store</th>
+                                        <th>Requested By</th>
+                                        <th>Required By Which Date</th>
+                                        <th>Approved By</th>
+                                        <th>Approved Date</th>
+                                        <th>Description</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -67,12 +69,15 @@
                                     @foreach ($data as $ppe_request)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $ppe_request->name }}</td>
-                                            <td>{{ $ppe_request->email }}</td>
-                                            <td>{{ $ppe_request->phone }}</td>
-                                            <td>{{ $ppe_request->type }}</td>
-
-                                            <td><a href="{{ route('ppe_request.status', $ppe_request->id) }}"
+                                            <td>{{ date('d-M-Y', strtotime($ppe_request->date)) }}</td>
+                                            <td>{{ $ppe_request->store->name }}</td>
+                                            <td>{{ $ppe_request->user->name }}</td>
+                                            <td>{{ date('d-M-Y', strtotime($ppe_request->required_by_which_date)) }}
+                                            </td>
+                                            <td>{{ $ppe_request->approved_by->name ?? '' }}</td>
+                                            <td>{{ $ppe_request->approved_date }}</td>
+                                            <td>{{ $ppe_request->description }}</td>
+                                            {{-- <td><a href="{{ route('ppe_request.status', $ppe_request->id) }}"
                                                     class="btn @if ($ppe_request->status == 1) btn-success @endif btn-secondary  btn-sm">
                                                     @if ($ppe_request->status == 1)
                                                         Active
@@ -80,12 +85,12 @@
                                                         Deactive
                                                     @endif
                                                 </a>
-                                            </td>
+                                            </td> --}}
                                             <td>
                                                 <div class="d-flex align-items-center list-action text-center ">
-                                                    <a class="badge badge-info mr-2" data-toggle="modal"
+                                                    {{-- <a class="badge badge-info mr-2" data-toggle="modal"
                                                         data-target="#myModal_view{{ $ppe_request->id }}"><i
-                                                            class="fa fa-eye  mr-0"></i></a>
+                                                            class="fa fa-eye  mr-0"></i></a> --}}
                                                     <a class="badge bg-success mr-2" data-toggle="tooltip"
                                                         data-placement="top" title="" data-original-title="Edit"
                                                         href="{{ route('ppe_request.edit', $ppe_request->id) }}"><i
@@ -105,11 +110,13 @@
                                 <tfoot>
                                     <tr>
                                         <th>S.no</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Type</th>
-                                        <th>Status</th>
+                                        <th>Date</th>
+                                        <th>Store</th>
+                                        <th>Requested By</th>
+                                        <th>Required By Which Date</th>
+                                        <th>Approved By</th>
+                                        <th>Approved Date</th>
+                                        <th>Description</th>
                                         <th>Action</th>
                                     </tr>
                                 </tfoot>

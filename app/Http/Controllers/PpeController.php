@@ -19,8 +19,9 @@ class PpeController extends Controller
     public function index()
     {
         $stores = Store::where('status', 1)->get();
+        $category = Category::get();
 
-        return view('ppe.index', ['ppe' =>  Ppe::get(), 'stores'=>$stores, 'category' => Category::get()]);
+        return view('ppe.index', ['ppe' =>  Ppe::get(), 'stores'=>$stores, 'category' => $category]);
     }
 
     /**
@@ -64,10 +65,12 @@ class PpeController extends Controller
      * @param  \App\Models\ppe  $ppe
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
-        $ppe = ppe::where('id', $id)->first();
-        return view('ppe.edit', ['ppe' => $ppe, 'category' => Category::get()]);
+        $ppe = ppe::find($id);
+        $stores = Store::where('status', 1)->get();
+        $category = Category::get();
+        return view('ppe.edit', ['ppe' => $ppe, 'stores'=>$stores,'category'=>$category ]);
     }
 
     /**

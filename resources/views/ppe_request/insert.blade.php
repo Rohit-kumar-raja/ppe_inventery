@@ -9,10 +9,11 @@
             </div>
             <!-- Modal body -->
             <div class="modal-body">
-                <form method="POST" action="{{ route('admin.save') }}">
+                <form method="POST" action="{{ route('ppe_request.save') }}">
                     <div class="row">
                         @csrf
                         <input type="hidden" name="created_at" value="{{ date('Y-m-d h:i:s') }}">
+                        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                         <div class="col-sm-4">
                             <label>Date :</label>
                             <input readonly type="text" class="form-control" placeholder="Enter Name"
@@ -61,15 +62,16 @@
                                     <td width="30%"><select type="text" name="ppe_id[]"
                                             placeholder="Subject Name"class="form-control">
 
-                                            <option selected disabled> -choose Ppe- </option>
-                                            @foreach ($ppes as $ppe)
-                                                <option value="{{ $ppe->id }}">{{ $pee->name }} - </option>
+                                            <option selected disabled> - Choose Ppe- </option>
+                                            @foreach ($ppes as $p)
+                                                <option value="{{ $p->id }}">{{ $p->name }} - <span class="text-gray">{{ $p->qty}}</span> </option>
                                             @endforeach
-                                        </select></td>
-                                    <td width="25%"><input type="text" name="request_qty[]"
-                                            placeholder="Subject Code" class="form-control" /></td>
+                                        </select>
+                                    </td>
+                                    <td width="25%"><input type="number" name="request_qty[]"
+                                            placeholder="Quantity of the item" class="form-control" /></td>
                                     <td width="30%">
-                                        <textarea name="remarks[]" placeholder="Exam Date" class="form-control"> </textarea>
+                                        <textarea name="remarks[]" placeholder="Write some Remarks" class="form-control"></textarea>
                                     </td>
 
                                     <td width="5%"><button type="button" name="add" id="add"
@@ -97,9 +99,9 @@
             $('#dynamic_field').append('<tr id="row' + i +
                 '" class="dynamic-added" ><td><input type="text" id="slno' + i + '" value="' + i +
                 '" readonly class="form-control" style="border:none;" /></td>' +
-                '<td><input type="text" name="subject_name[]" placeholder="Subject Name" class="form-control" /></td>' +
-                '<td width="25%"><input type="text" name="subject_code[]" placeholder="Subject Code" class="form-control" /></td>' +
-                '<td width="10%"><input type="date" name="exam_date[]" placeholder="Exam Date" class="form-control" /></td>' +
+                ' <td width="30%"><select type="text" name="ppe_id[]" placeholder="Subject Name"class="form-control"><option selected disabled> - Choose Ppe- </option> @foreach ($ppes as $p) <option value="{{ $p->id }}">{{ $p->name }} - <span class="text-gray">{{ $p->qty}}</span> </option> @endforeach </select> </td> ' +
+                '<td width="25%"><input type="number" name="request_qty[]" placeholder="Quantity of the item" class="form-control" /></td>' +
+                '  <td width="30%"> <textarea name="remarks[]" placeholder="Write some Remarks" class="form-control"></textarea> </td>' +
                 '</td><td><button type="button" name="remove" id="' + i +
                 '" class="btn btn-danger btn_remove">X</button></td>' +
                 '</tr>');

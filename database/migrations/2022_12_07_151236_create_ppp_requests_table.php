@@ -19,9 +19,9 @@ return new class extends Migration
             $table->unsignedBigInteger('store_id');
             $table->unsignedBigInteger('user_id');
             $table->date('required_by_which_date');
-            $table->unsignedBigInteger('approved_by');
-            $table->date('approved_date');
-            $table->text('description');
+            $table->unsignedBigInteger('approved_by')->nullable();
+            $table->date('approved_date')->nullable();
+            $table->text('description')->nullable();
             $table->boolean('status')->default(1);
             $table->timestamps();
             $table->foreign('store_id')->references('id')->on('stores');

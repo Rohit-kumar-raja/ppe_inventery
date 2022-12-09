@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ppe extends Model
 {
     use HasFactory;
+    public function categories(){
+        return $this->belongsTo(Category::class,'category_id');
+    }
+
+    public function store(){
+        return $this->belongsTo(Store::class,'store_id');
+    }
 }

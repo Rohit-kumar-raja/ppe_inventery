@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ppe;
+use App\Models\PpeRequestItem;
 use App\Models\PppRequest;
 use App\Models\Store;
 use Illuminate\Http\Request;
@@ -20,7 +21,7 @@ class PppRequestController extends Controller
     public function index()
     {
         $stores = Store::where('status', 1)->get();
-        $ppes = ppe::where('status', 1)->get();
+        $ppes = ppe::where('status', '1')->get();
         if (Auth::user()->type == "superadmin") {
             $data = PppRequest::all();
         } else {
@@ -34,10 +35,28 @@ class PppRequestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function save(Request $request)
+    public function store(Request $request)
     {
-        PppRequest::insertGetId($request->except('_token'));
-        return redirect()->route('ppe_request')->with('store', $this->page_name . ' Added Successfully !!! ');;
+        if (Auth::user()->id == $request->user_id) {
+            $id =  PppRequest::insertGetId($request->except('_token', 'ppe_id', 'request_qty', 'remarks'));
+
+            if (sizeof($request->ppe_id)) {
+                for ($i = 0; $i < count($request->ppe_id); $i++) {
+                    PpeRequestItem::insert([
+                        'ppe_id' => $request->ppe_id[$i],
+                        'request_qty' => $request->request_qty[$i],
+                        'remarks' => $request->remarks[$i],
+                        'received_qty' => 0,
+                        'pee_requested_id' => $id
+
+                    ]);
+                }
+            }
+
+            return redirect()->route('ppe_request')->with('store', $this->page_name . ' Added Successfully !!! ');
+        } else {
+            return redirect()->route('ppe_request')->with('delete', ' Your user id has not same ');
+        }
     }
 
     /**

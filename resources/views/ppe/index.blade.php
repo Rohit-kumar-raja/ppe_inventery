@@ -63,9 +63,9 @@
                                         <td>{{  $ppe -> status}}</td>
                                         <td>
                                             <div class="d-flex align-items-center list-action">
-                                                <a class="badge badge-info mr-2" data-toggle="modal"
+                                                {{-- <a class="badge badge-info mr-2" data-toggle="modal"
                                                     data-target="#myModal_view{{  $ppe-> id}}"><i
-                                                        class="fa fa-eye  mr-0"></i></a>
+                                                        class="fa fa-eye  mr-0"></i></a> --}}
                                                 <!-- <a class="badge badge-info mr-2" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"  data-toggle="modal" data-target="#myModal_view"><i class="fa fa-eye  mr-0"></i></a> -->
                                                 <a class="badge bg-success mr-2" data-toggle="tooltip"
                                                     data-placement="top" title="" data-original-title="Edit"
