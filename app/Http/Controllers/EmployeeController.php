@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use App\Models\Employee;
 use App\Http\Controllers\Controller;
 use App\Models\Area;
@@ -8,7 +10,7 @@ use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
-
+   
     public function index($designation_id)
     {
         $employee = Employee::where('designation_id', $designation_id)->get();
