@@ -50,7 +50,9 @@ class PppRequestController extends Controller
                         'pee_requested_id' => $id
 
                     ]);
+                    ppe::where('id',$request->ppe_id[$i])->update(['outward'=>ppe::find($request->ppe_id[$i])->outward+$request->request_qty[$i]]);
                 }
+               
             }
 
             return redirect()->route('ppe_request')->with('store', $this->page_name . ' Added Successfully !!! ');

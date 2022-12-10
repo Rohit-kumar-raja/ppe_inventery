@@ -14,9 +14,14 @@
                         </div>
 
                     </div>
+                    @if (session('save'))
+                        <div class="alert alert-success">
+                            {{ session('save') }}
+                        </div>
+                    @endif
                     <div class="card-body">
                         <div class="table-responsive">
-                            <form method="POST" action="/employee/store">
+                            <form method="POST" action="{{ route('employee.store') }}">
                                 <div class="row">
                                     @csrf
                                     <input type="hidden" name="created_at" value="{{ date('Y-m-d h:i:s') }}">
@@ -34,11 +39,15 @@
                                         <input type="text" class="form-control" placeholder="Enter name"
                                             name=" name">
                                     </div>
-
+                                    <div class="col-sm-4">
+                                        <label>Employee ID:</label>
+                                        <input type="text" class="form-control" placeholder="Enter Employee ID"
+                                            name="empid">
+                                    </div>
                                     <div class="col-sm-4">
                                         <label>Area:</label>
                                         <!-- <input type="text" class="form-control"  placeholder="Enter Area" name=" area"> -->
-                                        <select name="area" class="form-control">
+                                        <select name="area_id" class="form-control">
                                             <option selected disabled>Select Area</option>
                                             @foreach ($areas as $area)
                                                 <option value="{{ $area->id }}">{{ $area->name }}</option>
@@ -150,8 +159,8 @@
                                     </div>
 
 
-                          
-                                 
+
+
 
 
                                     <div class="col-sm-4">

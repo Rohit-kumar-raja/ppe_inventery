@@ -78,8 +78,8 @@
                                             <td>{{ $ppe->store->name}}</td>
                                             <td>{{ $ppe->qty }}</td>
                                             <td>{{ $ppe->qty }}</td>
-                                            <td>{{ $ppe->outword }}</td>
-                                            <td>{{ $ppe->qty-$ppe->outword  }}</td>
+                                            <td>{{ $ppe->outward }}</td>
+                                            <td>{{ $ppe->qty-$ppe->outward  }}</td>
                                             <td>{{ $ppe->percentage_of_min_avg }}</td>
                                             <td>{{ $ppe->nature_of_obs }}</td>
                                             <td>{{ $ppe->amc }}</td>

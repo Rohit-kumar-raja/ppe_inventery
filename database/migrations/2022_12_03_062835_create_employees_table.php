@@ -18,7 +18,6 @@ return new class extends Migration
             $table->unsignedBigInteger('designation_id');
             $table->unsignedBigInteger('area_id');
             $table->string('empid');
-            $table->string('area');
             $table->string('name');
             $table->string('position');
             $table->string('fathername');

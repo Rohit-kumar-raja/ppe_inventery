@@ -38,42 +38,27 @@ class EmployeeController extends Controller
 
     public function store(Request $request)
     {
+        
         Employee::insert($request->except('_token'));
-        return redirect('/employee/index');
+        return redirect()->back()->with('save','Employee Added Successfully !!! ');
     }
 
 
     public function edit($id)
     {
+
         $employee = employee::where('id', $id)->first();
-        return view('/employee/edit', ['employee' => $employee]);
+        $page=Designation::find($employee->designation_id)->name;
+        $areas = Area::where('status', 1)->get();
+        return view('/employee/edit', ['data' => $employee,'page'=>$page,'designation_id'=>$employee->designation_id, 'areas' => $areas,]);
     }
 
 
     public function update(Request $request, $id)
     {
-        $employee = employee::where('id', $id)->first();
-        $employee->empid = $request->empid;
-        $employee->area = $request->area;
-        $employee->name = $request->name;
-        $employee->position = $request->position;
-        $employee->fathername = $request->fathername;
-        $employee->mobile = $request->mobile;
-        $employee->address = $request->address;
-        $employee->mobile = $request->mobile;
-        $employee->maritalstatus = $request->maritalstatus;
-        $employee->dob = $request->dob;
-        $employee->placebirth = $request->placebirth;
-        $employee->qualification = $request->qualification;
-        $employee->exp = $request->exp;
-        $employee->lastcompany = $request->lastcompany;
-        $employee->photo = $request->photo;
-        $employee->adhar = $request->adhar;
-        $employee->pan = $request->pan;
-        $employee->passbook = $request->passbook;
-        $employee->status = $request->status;
-        $employee->save();
-        return redirect('/employee/index');
+        $employee = employee::where('id', $id)->update($request->except('_token'));
+       
+        return redirect()->route('employee',$request->designation_id);
     }
 
     public function destroy($id)

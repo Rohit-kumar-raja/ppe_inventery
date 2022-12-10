@@ -55,8 +55,8 @@
 
                                     <div class="col-sm-4">
                                         <label>Quantity:</label>
-                                        <input type="number" class="form-control" name=" qty"
-                                            placeholder="Enter qty" value="{{ $ppe->qty }}">
+                                        <input type="number" class="form-control" 
+                                           disabled placeholder="Enter qty" value="{{ $ppe->qty }}">
                                     </div>
 
 

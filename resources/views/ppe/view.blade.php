@@ -64,14 +64,14 @@
                                                                     <label>Outward:</label>
                                                                     <input disabled type="number" class="form-control"
                                                                         name=" qty" placeholder="Enter qty"
-                                                                        value="{{ $ppe->outword }}">
+                                                                        value="{{ $ppe->outward }}">
                                                                 </div>
 
                                                                 <div class="col-sm-4">
                                                                     <label>Net Quantity:</label>
                                                                     <input disabled type="number" class="form-control"
                                                                         name="qty" placeholder="Enter qty"
-                                                                        value="{{ $ppe->qty-$ppe->outword }}">
+                                                                        value="{{ $ppe->qty-$ppe->outward }}">
                                                                 </div>
 
                                                                 <div class="col-sm-4">
