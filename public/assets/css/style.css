@@ -12,3 +12,7 @@
 .bg-red {
     background-color: rgb(252, 0, 0) !important;
 }
+.table td {
+    border: 0;
+    border: 1px solid #dcdfe8;
+}

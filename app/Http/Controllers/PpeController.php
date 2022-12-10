@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\ppe;
+use App\Models\PpeReStock;
 use Illuminate\Http\Request;
 use App\Models\Store;
 
@@ -21,7 +22,7 @@ class PpeController extends Controller
         $stores = Store::where('status', 1)->get();
         $category = Category::get();
 
-        return view('ppe.index', ['ppe' =>  Ppe::get(), 'stores'=>$stores, 'category' => $category]);
+        return view('ppe.index', ['ppe' =>  Ppe::get(), 'stores' => $stores, 'category' => $category]);
     }
 
     /**
@@ -70,7 +71,7 @@ class PpeController extends Controller
         $ppe = ppe::find($id);
         $stores = Store::where('status', 1)->get();
         $category = Category::get();
-        return view('ppe.edit', ['ppe' => $ppe, 'stores'=>$stores,'category'=>$category ]);
+        return view('ppe.edit', ['ppe' => $ppe, 'stores' => $stores, 'category' => $category]);
     }
 
     /**
@@ -101,5 +102,13 @@ class PpeController extends Controller
         $ppe = ppe::where('id', $id)->first();
         $ppe->delete();
         return redirect('/ppe/index')->with('delete', $this->page_name . ' Deleted Successfully !!!');
+    }
+
+    public function restock(Request $request)
+    {
+       // dd($request);
+        PpeReStock::insert($request->except('_token'));
+        ppe::where('id',$request->ppe_id)->update(['qty'=>ppe::find($request->ppe_id)->qty+$request->qty]);
+        return back()->with('store', $this->page_name . ' Re Stock Added Successfully !!!');
     }
 }

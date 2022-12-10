@@ -32,7 +32,7 @@
 
                                     </div>
                                     <div class="col-sm-4">
-                                        <label> Seelect Strore:</label>
+                                        <label> Seelect Store:</label>
                                         <select type="text" class="form-control" placeholder="Enter email"
                                             name="store_id">
                                             {{-- <option value="{{ $pee }}">{{ $ppe }}</option> --}}
@@ -59,38 +59,7 @@
                                             placeholder="Enter qty" value="{{ $ppe->qty }}">
                                     </div>
 
-                                    <div class="col-sm-4">
-                                        <label>Out Of Stock Date:</label>
-                                        <input type="date" class="form-control" name=" out_of_stock_dt"
-                                            placeholder="Enter Out Of Stock date" value="{{ $ppe->out_of_stock_dt }}">
-                                    </div>
 
-
-                                    <div class="col-sm-4">
-                                        <label>Inward:</label>
-                                        <input type="number" class="form-control" name=" inward"
-                                            placeholder="Enter inward" value="{{ $ppe->inward }}">
-                                    </div>
-
-
-                                    <div class="col-sm-4">
-                                        <label>Outward:</label>
-                                        <input type="number" class="form-control" name=" outward"
-                                            placeholder="Enter outward" value="{{ $ppe->outward }}">
-                                    </div>
-
-
-                                    <div class="col-sm-4">
-                                        <label>Net:</label>
-                                        <input type="number" class="form-control" name=" net"
-                                            placeholder="Enter net" value="{{ $ppe->net }}">
-                                    </div>
-
-                                    <div class="col-sm-4">
-                                        <label>Place Order:</label>
-                                        <input type="number" class="form-control" name=" placeorder"
-                                            placeholder="Enter placeorder" value="{{ $ppe->placeorder }}">
-                                    </div>
 
 
                                     <div class="col-sm-4">
@@ -99,7 +68,6 @@
                                             placeholder="Enter procurment_date" value="{{ $ppe->procurment_date }}">
                                     </div>
 
-
                                     <div class="col-sm-4">
                                         <label>Percentage Of Min Avg:</label>
                                         <input type="number" class="form-control" name=" percentage_of_min_avg"
@@ -107,21 +75,11 @@
                                             value="{{ $ppe->percentage_of_min_avg }}">
                                     </div>
 
-
-                                    <div class="col-sm-4">
-                                        <label>Strore Id:</label>
-                                        <input type="number" class="form-control" name=" strore_id"
-                                            placeholder="Enter strore_id" value="{{ $ppe->strore_id }}">
-                                    </div>
-
-
                                     <div class="col-sm-4">
                                         <label>Nature Of Obs:</label>
                                         <input type="number" class="form-control" name=" nature_of_obs"
                                             placeholder="Enter nature_of_obs" value="{{ $ppe->nature_of_obs }}">
                                     </div>
-
-
                                     <div class="col-sm-4">
                                         <label>Amc:</label>
                                         <input type="text" class="form-control" name=" amc"
@@ -144,12 +102,6 @@
 
 
                                     <div class="col-sm-4">
-                                        <label>Description:</label>
-                                        <input type="text" class="form-control" name=" description"
-                                            placeholder="Enter description" value="{{ $ppe->description }}">
-                                    </div>
-
-                                    <div class="col-sm-4">
                                         <label>Esisn_no:</label>
                                         <input type="number" class="form-control" name=" esisn_no"
                                             placeholder="Enter esisn_no" value="{{ $ppe->esisn_no }}">
@@ -161,19 +113,20 @@
                                             placeholder="Enter procurmnt_freq_dt"
                                             value="{{ $ppe->procurmnt_freq_dt }}">
                                     </div>
-
-
                                     <div class="col-sm-4">
                                         <label>Status:</label>
                                         <select name="status" class="form-control">
-                                            <option value="{{ $ppe->status }}" selected readonly>{{ $ppe->status }}
-                                            </option>
                                             <option value="1">Active</option>
                                             <option value="0">Deactive</option>
                                         </select>
                                     </div>
-
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-12">
+                                        <label>Description:</label>
+                                        <textarea type="text" class="form-control" name="description"
+                                            placeholder="Enter description" > {{ $ppe->description }}</textarea>
+                                    </div>
+                                    <hr>
+                                    <div class="col-sm-12 text-center p-2">
                                         <button type="submit" class="btn btn-primary mt-2">Submit</button>
                                     </div>
                                 </div>

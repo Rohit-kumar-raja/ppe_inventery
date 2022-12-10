@@ -34,7 +34,7 @@ use PHPUnit\TextUI\XmlConfiguration\Group;
 
 
 require __DIR__ . '/auth.php';
-Route::group(['middleware' => 'auth','middleware'=>'permission'], function () {
+Route::group(['middleware' => 'auth', 'middleware' => 'permission'], function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -59,6 +59,7 @@ Route::group(['middleware' => 'auth','middleware'=>'permission'], function () {
     Route::get('/ppe/edit/{id}', [PpeController::class, 'edit'])->name('ppe.edit');
     Route::post('/ppe/update/{id}', [PpeController::class, 'update'])->name('ppe.update');
     Route::get('/ppe/destroy/{id}', [PpeController::class, 'destroy'])->name('ppe.destroy');
+    Route::post('/ppe/restock', [PpeController::class, 'restock'])->name('ppe.restock');
 
     // area route
     Route::get('/area/index', [AreaController::class, 'index'])->name('area');
@@ -102,13 +103,13 @@ Route::group(['middleware' => 'auth','middleware'=>'permission'], function () {
 
     // employee
 
-    
+
     Route::get('/employee/index/{designation_id}', [EmployeeController::class, 'index'])->name('employee');
     Route::get('/employee/add/{designation_id}', [EmployeeController::class, 'create'])->name('employee.save');
     Route::post('/employee/store', [EmployeeController::class, 'store'])->name('employee.store');
     Route::get('/employee/edit/{id}', [EmployeeController::class, 'edit'])->name('employee.edit');
     Route::post('/employee/update/{id}', [EmployeeController::class, 'update'])->name('employee.update');
-    Route::get('/employee/delete/{id}',[EmployeeController::class,'destroy'])->name('employee.delete');
+    Route::get('/employee/delete/{id}', [EmployeeController::class, 'destroy'])->name('employee.delete');
 
     // admin route
     Route::get('/admin/list', [AdminController::class, 'index'])->name('admin');
@@ -124,10 +125,4 @@ Route::group(['middleware' => 'auth','middleware'=>'permission'], function () {
     Route::post('/ppe/request/list/save/{id}', [PppRequestController::class, 'update'])->name('ppe_request.update');
     Route::get('/ppe/request/delete/{id}', [PppRequestController::class, 'destroy'])->name('ppe_request.delete');
     Route::get('/ppe/request/status/{id}', [PppRequestController::class, 'status'])->name('ppe_request.status');
-
-    // Route::get('/admin/role/list', [AdminRoleController::class, 'index'])->name('admin.role');
-    // Route::post('/admin/role/save', [AdminRoleController::class, 'save'])->name('admin.role.save');
-    // Route::get('/admin/role/list/edit/{id}', [AdminRoleController::class, 'edit'])->name('admin.role.edit');
-    // Route::post('/admin/role/list/save/{id}', [AdminRoleController::class, 'update'])->name('admin.role.update');
-    // Route::get('/admin/role/delete/{id}', [AdminRoleController::class, 'destroy'])->name('admin.role.delete');
 });

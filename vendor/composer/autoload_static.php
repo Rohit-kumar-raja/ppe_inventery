@@ -561,6 +561,7 @@ class ComposerStaticInit8a10bea94015f411a0a0814418507c4a
         'App\\Models\\Feedback' => __DIR__ . '/../..' . '/app/Models/Feedback.php',
         'App\\Models\\IssuedPpe' => __DIR__ . '/../..' . '/app/Models/IssuedPpe.php',
         'App\\Models\\Permission' => __DIR__ . '/../..' . '/app/Models/Permission.php',
+        'App\\Models\\PpeReStock' => __DIR__ . '/../..' . '/app/Models/PpeReStock.php',
         'App\\Models\\PpeRequestItem' => __DIR__ . '/../..' . '/app/Models/PpeRequestItem.php',
         'App\\Models\\PppRequest' => __DIR__ . '/../..' . '/app/Models/PppRequest.php',
         'App\\Models\\Store' => __DIR__ . '/../..' . '/app/Models/Store.php',

@@ -35,7 +35,7 @@
 
                         <div class="col-sm-4">
                             <label>Date:</label>
-                            <input type="date" class="form-control" name=" date">
+                            <input type="date" class="form-control" name="date">
                         </div>
 
                         <div class="col-sm-4">
@@ -89,12 +89,7 @@
                         </div>
 
 
-                        <div class="col-sm-4">
-                            <label>Description:</label>
-                            <input type="text" class="form-control" name=" description"
-                                placeholder="Enter description">
-                        </div>
-
+                    
                         <div class="col-sm-4">
                             <label>Es/isn No:</label>
                             <input type="number" class="form-control" name=" esisn_no" placeholder="Enter esisn_no">
@@ -115,6 +110,13 @@
                                 <option value="0">Deactive</option>
                             </select>
                         </div>
+
+                        <div class="col-sm-12">
+                            <label>Description:</label>
+                            <textarea type="text" class="form-control" name="description"
+                                placeholder="Enter description"></textarea>
+                        </div>
+
                         <hr>
                         <div class="col-sm-12 p-2 text-center">
                             <button type="submit" class="btn btn-primary mt-2">Submit</button>

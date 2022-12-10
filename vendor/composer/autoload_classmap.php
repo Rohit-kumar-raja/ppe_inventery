@@ -56,6 +56,7 @@ return array(
     'App\\Models\\Feedback' => $baseDir . '/app/Models/Feedback.php',
     'App\\Models\\IssuedPpe' => $baseDir . '/app/Models/IssuedPpe.php',
     'App\\Models\\Permission' => $baseDir . '/app/Models/Permission.php',
+    'App\\Models\\PpeReStock' => $baseDir . '/app/Models/PpeReStock.php',
     'App\\Models\\PpeRequestItem' => $baseDir . '/app/Models/PpeRequestItem.php',
     'App\\Models\\PppRequest' => $baseDir . '/app/Models/PppRequest.php',
     'App\\Models\\Store' => $baseDir . '/app/Models/Store.php',
