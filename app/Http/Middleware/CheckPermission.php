@@ -32,7 +32,7 @@ class CheckPermission
                 if (check_permission($route_name)) {
                     return $next($request);
                 } else {
-                    return  redirect()->back();
+                    return  redirect()->back()->with('delete','You Do not have permission to access this route');
                 }
             }
         }

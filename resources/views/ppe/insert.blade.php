@@ -13,7 +13,7 @@
                     <div class="row">
                         @csrf
                         <div class="col-sm-4">
-                            <label>Category Id:</label>
+                            <label>Category:</label>
                             <select name="category_id" class="form-control">
                                 <option value="" selected disabled>Select Status</option>
                                 @foreach ($category as $category)
@@ -24,7 +24,7 @@
 
                         </div>
                         <div class="col-sm-4">
-                            <label> Select Strore:</label>
+                            <label> Select Store:</label>
                             <select type="text" class="form-control" placeholder="Enter email" name="store_id">
                                 <option selected disabled> - Choose Store - </option>
                                 @foreach ($stores as $store)
@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="col-sm-4">
-                            <label>Name:</label>
+                            <label>Ppe Name:</label>
                             <input type="text" class="form-control" name=" name" placeholder="Enter Name">
                         </div>
 
@@ -65,7 +65,7 @@
 
                         <div class="col-sm-4">
                             <label>Nature Of Obs:</label>
-                            <input type="number" class="form-control" name=" nature_of_obs"
+                            <input type="text" class="form-control" name=" nature_of_obs"
                                 placeholder="Enter Nature Of Obs">
                         </div>
 
@@ -84,7 +84,7 @@
 
                         <div class="col-sm-4">
                             <label>Issue Frequency:</label>
-                            <input type="number" class="form-control" name=" issue_frequency"
+                            <input type="text" class="form-control" name=" issue_frequency"
                                 placeholder="Enter issue_frequency">
                         </div>
 
