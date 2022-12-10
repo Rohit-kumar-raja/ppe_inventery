@@ -24,7 +24,7 @@
 
                         </div>
                         <div class="col-sm-4">
-                            <label> Seelect Strore:</label>
+                            <label> Select Strore:</label>
                             <select type="text" class="form-control" placeholder="Enter email" name="store_id">
                                 <option selected disabled> - Choose Store - </option>
                                 @foreach ($stores as $store)
@@ -58,15 +58,15 @@
 
 
                         <div class="col-sm-4">
-                            <label>Percentage Of Min Avg:</label>
+                            <label>Percentage Of Min Coverage:</label>
                             <input type="number" class="form-control" name=" percentage_of_min_avg"
-                                placeholder="Enter percentage_of_min_avg">
+                                placeholder="Enter Percentage Of Min Coverage">
                         </div>
 
                         <div class="col-sm-4">
                             <label>Nature Of Obs:</label>
                             <input type="number" class="form-control" name=" nature_of_obs"
-                                placeholder="Enter nature_of_obs">
+                                placeholder="Enter Nature Of Obs">
                         </div>
 
 
