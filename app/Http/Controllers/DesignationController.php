@@ -14,8 +14,9 @@ class DesignationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   $designation = Designation::get();
-        return view('designation/index',['designation' => $designation]);
+    {
+        $designation = Designation::get();
+        return view('designation/index', ['designation' => $designation]);
     }
 
     /**
@@ -61,13 +62,24 @@ class DesignationController extends Controller
      * @param  \App\Models\Designation  $designation
      * @return \Illuminate\Http\Response
      */
+    public function status($id)
+    {
+        $status = designation::find($id);
+        if ($status->status == 1) {
+            designation::where('id', $id)->update(['status' => '0']);
+            return redirect()->back()->with('status', 'Status Successfully Deactivated');
+        } else {
+            designation::where('id', $id)->update(['status' => '1']);
+            return redirect()->back()->with('status1', 'Status Successfully Activated');
+        }
+    }
 
-   
+
 
     public function edit($id)
     {
-        $designation = designation::where('id',$id)->first();
-        return view('designation.edit',['designation' => $designation]);
+        $designation = designation::where('id', $id)->first();
+        return view('designation.edit', ['designation' => $designation]);
     }
 
     /**
@@ -77,9 +89,9 @@ class DesignationController extends Controller
      * @param  \App\Models\Designation  $designation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request , $id)
+    public function update(Request $request, $id)
     {
-        $designation = designation::where('id',$id)->first();        
+        $designation = designation::where('id', $id)->first();
         $designation->name = $request->name;
         $designation->description = $request->description;
         $designation->status = $request->status;
@@ -95,7 +107,7 @@ class DesignationController extends Controller
      */
     public function destroy($id)
     {
-        $designation = designation::where('id',$id)->first();
+        $designation = designation::where('id', $id)->first();
         $designation->delete();
         return redirect('/designation/index');
     }

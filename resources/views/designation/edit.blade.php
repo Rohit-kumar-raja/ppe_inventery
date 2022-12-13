@@ -21,31 +21,25 @@
                                 <div class="row">
                                     @csrf
 
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-6">
                                         <label>Name:</label>
                                         <input type="text" class="form-control"  placeholder="Enter Name"
                                             name=" name" value="{{ $designation-> name}}">
                                     </div>
 
-                                    
+                                    <div class="col-sm-6">
+                                        <label>Status:</label>
+                                       <select name="status" class="form-control">
+                                        <option value="1">Active</option>
+                                        <option value="0">Deactive</option>
+                                       </select>
+                                    </div>
                                     <div class="col-sm-12">
                                         <label>Description:</label>
                                         <textarea class="form-control" name="description" placeholder="Enter Description"
                                             >{{$designation ->description }}</textarea>
                                     </div>
-
-
-                                    <div class="col-sm-12">
-                                        <label>Status:</label>
-                                       <select name="status" class="form-control">
-                                        <option value="{{$designation ->status }}">{{$designation ->status }}</option>
-                                        <option value="1">Active</option>
-                                        <option value="0">Deactive</option>
-                                       </select>
-                                    </div>
-
-                                   
-                                    <div class="col-sm-12 text-center">
+                                    <div class="col-sm-12 text-center p-3">
                                         <button type="submit" class="btn btn-primary mt-2">Update</button>
                                     </div>
 

@@ -100,6 +100,7 @@ Route::group(['middleware' => 'auth', 'middleware' => 'permission'], function ()
     Route::get('/designation/edit/{id}', [DesignationController::class, 'edit'])->name('designation.edit');
     Route::post('/designation/update/{id}', [DesignationController::class, 'update'])->name('designation.update');
     Route::get('/designation/delete/{id}', [DesignationController::class, 'destroy'])->name('designation.destroy');
+    Route::get('/designation/status/{id}', [DesignationController::class, 'status'])->name('designation.status');
 
     // employee
 

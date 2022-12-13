@@ -47,7 +47,7 @@
                             <table id="datatable" class="table data-tables table-striped">
                                 <thead>
                                     <tr class="ligth">
-                                        <th>ID</th>
+                                        <th>S.no</th>
                                         <th>Name</th>
                                         <th>Description</th>
                                         <th>Status</th>                                        
@@ -60,7 +60,15 @@
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{ $designation-> name}}</td>
                                         <td>{{ $designation-> description}}</td>
-                                        <td>{{ $designation-> status}}</td>
+                                        <td><a href="{{ route('designation.status', $designation->id) }}"
+                                            class="btn @if ($designation->status == 1) btn-success @endif btn-secondary  btn-sm">
+                                            @if ($designation->status == 1)
+                                                Active
+                                            @else
+                                                Deactive
+                                            @endif
+                                        </a>
+                                    </td>
                                         <td>
                                             <div class="d-flex align-items-center list-action">
                                                 <!-- <a class="badge badge-info mr-2" data-toggle="modal"
@@ -87,7 +95,7 @@
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                    <th>ID</th>
+                                        <th>S.no</th>
                                         <th>Name</th>
                                         <th>Description</th>
                                         <th>Status</th>                                        

@@ -46,4 +46,7 @@ class User extends Authenticatable
     {
         return  $this->belongsToMany(User::class,'permissions','user_id',null,'id');
     }
+    function emp(){
+       return $this->belongsTo(Employee::class,'pepole_id');
+    }
 }
