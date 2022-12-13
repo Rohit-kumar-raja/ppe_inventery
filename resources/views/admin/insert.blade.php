@@ -33,7 +33,7 @@
                             <select class="form-control"name="type">
                                 <option selected disabled> -Select- </option>
                                 @foreach ($types as $type)
-                                    <option value="{{ $type->type }}">{{ $type->type }}</option>
+                                    <option value="{{ $type->id }}">{{ $type->name }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -41,6 +41,9 @@
                             <label>Select for Admin:</label>
                             <select type="text" class="form-control" name="worker_id">
                                 <option selected disabled> - Select - </option>
+                                @foreach ($emps as $emp)
+                                    <option value="{{ $emp->id }}">{{ $emp->name }}</option>
+                                @endforeach
                             </select>
                         </div>
 

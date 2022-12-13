@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Designation;
+use App\Models\Employee;
 use App\Models\Permission;
 use App\Models\User;
 use App\Models\Worker;
@@ -18,11 +20,13 @@ class AdminController extends Controller
     {
         // dd(auth()->user()->can('dashboard'));
         $all_admin = User::all();
-        $types = Worker::distinct('type')->get();
+        $types = Designation::where('status',1)->get();
+        $emp=Employee::where('status',1)->get();
         return view('admin.index', [
             'admins' => $all_admin,
             'page' => $this->page_name,
-            'types' => $types
+            'types' => $types,
+            'emps'=>$emp
         ]);
     }
 

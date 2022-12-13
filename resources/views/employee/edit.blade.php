@@ -37,7 +37,7 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <label>Employee ID:</label>
-                                        <input  value="{{$data->empid }}  value="{{$data->empid }}" type="text" class="form-control" placeholder="Enter Employee ID"
+                                        <input  value="{{$data->empid }}" type="text" class="form-control" placeholder="Enter Employee ID"
                                             name="empid">
                                     </div>
                                     <div class="col-sm-4">
@@ -53,7 +53,7 @@
 
                                     <div class="col-sm-4">
                                         <label>Applying For Position:</label>
-                                        <input  value="{{$data->empid }}"  type="text" class="form-control"
+                                        <input  value="{{$data->position }}"  type="text" class="form-control"
                                             placeholder="Enter Applying For Position" name=" position">
                                     </div>
 

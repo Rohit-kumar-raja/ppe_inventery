@@ -62,7 +62,7 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $employee->empid }}</td>
                                             <td>{{ $employee->name }}</td>
-                                            <td>{{ $employee->area }}</td>
+                                            <td>{{ $employee->area->name }}</td>
                                             <td>{{ $employee->position }}</td>
                                             <td>
                                                 <div class="d-flex align-items-center list-action">

@@ -25,7 +25,7 @@
 
                         <div class="col-sm-4">
                             <label>Area:</label>
-                            <input type="text" class="form-control" placeholder="Enter Area" name=" area" readonly value="{{$employee->area}}">
+                            <input type="text" class="form-control" placeholder="Enter Area" name=" area" readonly value="{{$employee->area->name}}">
                         </div>
 
                         <div class="col-sm-4">
