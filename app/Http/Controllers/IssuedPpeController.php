@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Employee;
 use App\Models\IssuedPpe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\ppe;
+use App\Models\PppRequest;
+use App\Models\Store;
 
 class IssuedPpeController extends Controller
 {
+    public $paga_name = "Issue PPE";
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +20,16 @@ class IssuedPpeController extends Controller
      */
     public function index()
     {
-        //
+        // $ppes = ppe::where('status', '1')->get();
+        $emp = Employee::where('status', 1)->get();
+        if (Auth::user()->type = "superadmin") {
+            $issue_ppe =  IssuedPpe::all();
+            $ppes = PppRequest::all();
+        } else {
+            $issue_ppe = IssuedPpe::where('issued_by', Auth::user()->id)->get();
+            $ppes = PppRequest::where('user_id',Auth::user()->id)->where('status',1)->gat();
+        }
+        return view('ppe_issue.index', ['data' => $issue_ppe, 'page' => $this->paga_name, 'emp' => $emp, 'ppes' => $ppes]);
     }
 
     /**

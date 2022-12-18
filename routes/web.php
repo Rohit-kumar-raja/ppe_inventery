@@ -10,6 +10,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\IssuedPpeController;
 use App\Http\Controllers\PpeController;
 use App\Http\Controllers\PppRequestController;
 use App\Http\Controllers\StoreController;
@@ -126,4 +127,14 @@ Route::group(['middleware' => 'auth', 'middleware' => 'permission'], function ()
     Route::post('/ppe/request/list/save/{id}', [PppRequestController::class, 'update'])->name('ppe_request.update');
     Route::get('/ppe/request/delete/{id}', [PppRequestController::class, 'destroy'])->name('ppe_request.delete');
     Route::get('/ppe/request/status/{id}', [PppRequestController::class, 'status'])->name('ppe_request.status');
+
+
+    Route::get('/ppe/issue/list', [IssuedPpeController::class, 'index'])->name('ppe_issue');
+    Route::post('/ppe/issue/save', [IssuedPpeController::class, 'store'])->name('ppe_issue.save');
+    Route::get('/ppe/issue/list/edit/{id}', [IssuedPpeController::class, 'edit'])->name('ppe_issue.edit');
+    Route::post('/ppe/issue/list/save/{id}', [IssuedPpeController::class, 'update'])->name('ppe_issue.update');
+    Route::get('/ppe/issue/delete/{id}', [IssuedPpeController::class, 'destroy'])->name('ppe_issue.delete');
+    Route::get('/ppe/issue/status/{id}', [IssuedPpeController::class, 'status'])->name('ppe_issue.status');
+
+
 });

@@ -23,7 +23,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('prof_images');
             $table->timestamps();
-            $table->foreign('issued_by')->references('id')->on('employees');
+            $table->foreign('issued_by')->references('id')->on('users');
             $table->foreign('issue_to')->references('id')->on('employees');
             // $table->foreign('ppe_request_item_id')->references('id')->on('ppe_request_items');
 

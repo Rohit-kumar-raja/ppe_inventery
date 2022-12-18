@@ -171,8 +171,8 @@
                                     <i class="las la-minus"></i><span>Request PPE</span>
                                 </a>
                             </li>
-                            <li class="{{ Route::is('issued_ppe') ? 'active' : '' }}">
-                                <a href="">
+                            <li class="{{ Route::is('ppe_issue') ? 'active' : '' }}">
+                                <a href="{{ route('ppe_issue')}}">
                                     <i class="las la-minus"></i><span>Issue PPE</span>
                                 </a>
                             </li>
