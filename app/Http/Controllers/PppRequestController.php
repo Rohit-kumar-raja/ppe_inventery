@@ -46,6 +46,7 @@ class PppRequestController extends Controller
                         'ppe_id' => $request->ppe_id[$i],
                         'request_qty' => $request->request_qty[$i],
                         'remarks' => $request->remarks[$i],
+                        'user_id'=>Auth::user()->id,
                         'received_qty' => 0,
                         'pee_requested_id' => $id
 

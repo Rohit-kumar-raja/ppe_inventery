@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class PpeRequestItem extends Model
 {
     use HasFactory;
+
+    public function ppe()
+    {
+        return $this->belongsTo(ppe::class);
+    }
 }

@@ -29,7 +29,7 @@
                             <select name="ppe_request_item_id" id="" class="form-control">
                                 <option selected disabled > -Select Ppe From Requested Item- </option>
                                 @foreach ($ppes as $ppe )
-                                  <option value="{{$ppe->id}}">{{ $ppe->id}}</option>  
+                                  <option value="{{$ppe->id}}">{{ $ppe->ppe->name }} - {{ $ppe->received_qty}}</option>  
                                 @endforeach
                             </select>
                         </div>

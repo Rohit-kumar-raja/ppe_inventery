@@ -7,6 +7,7 @@ use App\Models\IssuedPpe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\ppe;
+use App\Models\PpeRequestItem;
 use App\Models\PppRequest;
 use App\Models\Store;
 
@@ -24,10 +25,10 @@ class IssuedPpeController extends Controller
         $emp = Employee::where('status', 1)->get();
         if (Auth::user()->type = "superadmin") {
             $issue_ppe =  IssuedPpe::all();
-            $ppes = PppRequest::all();
+            $ppes = PpeRequestItem::where('received_qty','>','0')->get();
         } else {
             $issue_ppe = IssuedPpe::where('issued_by', Auth::user()->id)->get();
-            $ppes = PppRequest::where('user_id',Auth::user()->id)->where('status',1)->gat();
+            $ppes = PpeRequestItem::where('user_id',Auth::user())->where('received_qty','>','0')->gat();
         }
         return view('ppe_issue.index', ['data' => $issue_ppe, 'page' => $this->paga_name, 'emp' => $emp, 'ppes' => $ppes]);
     }
