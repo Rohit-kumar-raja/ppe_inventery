@@ -10,14 +10,14 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between">
                         <div class="header-title">
-                            <h4 class="card-title">Edit {{ $page  }} </h4>
+                            <h4 class="card-title">Edit {{ $page }} </h4>
                         </div>
                         <!-- <a class="btn btn-primary add-list btn-sm text-white"  data-toggle="modal" data-target="#myModal"><i
                                 class="las la-plus mr-3"></i>Add Company</a>  -->
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <form method="POST" action="{{ route('employee.update',$data->id) }}">
+                            <form method="POST" action="{{ route('employee.update', $data->id) }}">
                                 <div class="row">
                                     @csrf
                                     <input type="hidden" name="updated_at" value="{{ date('Y-m-d h:i:s') }}">
@@ -32,17 +32,17 @@
 
                                     <div class="col-sm-4">
                                         <label>Name:</label>
-                                        <input value="{{$data->name}}" type="text" class="form-control" placeholder="Enter name"
-                                            name=" name">
+                                        <input value="{{ $data->name }}" type="text" class="form-control"
+                                            placeholder="Enter name" name=" name">
                                     </div>
                                     <div class="col-sm-4">
                                         <label>Employee ID:</label>
-                                        <input  value="{{$data->empid }}" type="text" class="form-control" placeholder="Enter Employee ID"
-                                            name="empid">
+                                        <input value="{{ $data->empid }}" type="text" class="form-control"
+                                            placeholder="Enter Employee ID" name="empid">
                                     </div>
                                     <div class="col-sm-4">
                                         <label>Area:</label>
-                                        <!-- <input  value="{{$data->empid }}  type="text" class="form-control"  placeholder="Enter Area" name=" area"> -->
+                                        <!-- <input  value="{{ $data->empid }}  type="text" class="form-control"  placeholder="Enter Area" name=" area"> -->
                                         <select name="area_id" class="form-control">
                                             <option selected disabled>Select Area</option>
                                             @foreach ($areas as $area)
@@ -52,28 +52,39 @@
                                     </div>
 
                                     <div class="col-sm-4">
+                                        <label>Store :</label>
+                                        <select name="store_id" class="form-control">
+                                            <option selected disabled>Select Store</option>
+                                            @foreach ($stores as $store)
+                                                <option value="{{ $store->id }}">{{ $store->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-4">
                                         <label>Applying For Position:</label>
-                                        <input  value="{{$data->position }}"  type="text" class="form-control"
+                                        <input value="{{ $data->position }}" type="text" class="form-control"
                                             placeholder="Enter Applying For Position" name=" position">
                                     </div>
 
                                     <div class="col-sm-4">
                                         <label>Father Name:</label>
-                                        <input  value="{{$data->fathername }}"  type="text" class="form-control" placeholder="Enter Father Name"
-                                            name=" fathername">
+                                        <input value="{{ $data->fathername }}" type="text" class="form-control"
+                                            placeholder="Enter Father Name" name=" fathername">
                                     </div>
 
                                     <div class="col-sm-4">
                                         <label>Phone Number:</label>
-                                        <input  value="{{$data->mobile }}"  type="number" class="form-control" placeholder="Enter Phone Number"
-                                            name=" mobile">
+                                        <input value="{{ $data->mobile }}" type="number" class="form-control"
+                                            placeholder="Enter Phone Number" name=" mobile">
                                     </div>
 
                                     <div class="col-sm-4">
                                         <label>Marital Status:</label>
                                         {{-- <input  value="{{$data->empid }}  type="text" class="form-control"  placeholder="Enter Marital Status" name=" maritalstatus"> --}}
                                         <select name="maritalstatus" class="form-control">
-                                            <option selected value="{{$data->maritalstatus }}">{{$data->maritalstatus }}</option>
+                                            <option selected value="{{ $data->maritalstatus }}">
+                                                {{ $data->maritalstatus }}</option>
                                             <option value="single">Single</option>
                                             <option value="married">Married</option>
                                         </select>
@@ -81,32 +92,32 @@
 
                                     <div class="col-sm-4">
                                         <label>DOB:</label>
-                                        <input  value="{{$data->dob }}"  type="date" class="form-control" placeholder="Enter DOB"
-                                            name=" dob">
+                                        <input value="{{ $data->dob }}" type="date" class="form-control"
+                                            placeholder="Enter DOB" name=" dob">
                                     </div>
 
                                     <div class="col-sm-4">
                                         <label>Place Of Birth:</label>
-                                        <input  value="{{$data->placebirth }}"  type="text" class="form-control" placeholder="Enter Place Of Birth"
-                                            name=" placebirth">
+                                        <input value="{{ $data->placebirth }}" type="text" class="form-control"
+                                            placeholder="Enter Place Of Birth" name=" placebirth">
                                     </div>
 
                                     <div class="col-sm-4">
                                         <label>Qualification:</label>
-                                        <input  value="{{$data->qualification }}"  type="text" class="form-control" placeholder="Enter Qualification"
-                                            name=" qualification">
+                                        <input value="{{ $data->qualification }}" type="text" class="form-control"
+                                            placeholder="Enter Qualification" name=" qualification">
                                     </div>
 
                                     <div class="col-sm-4">
                                         <label>Experience:</label>
-                                        <input  value="{{$data->exp }}"  type="text" class="form-control" placeholder="Enter Experience"
-                                            name=" exp">
+                                        <input value="{{ $data->exp }}" type="text" class="form-control"
+                                            placeholder="Enter Experience" name=" exp">
                                     </div>
 
                                     <div class="col-sm-4">
                                         <label>Last Company:</label>
-                                        <input  value="{{$data->lastcompany }}"  type="text" class="form-control" placeholder="Enter Last Company"
-                                            name=" lastcompany">
+                                        <input value="{{ $data->lastcompany }}" type="text" class="form-control"
+                                            placeholder="Enter Last Company" name=" lastcompany">
                                     </div>
 
 
@@ -114,20 +125,20 @@
 
                                     <div class="col-sm-4">
                                         <label>PAN NO:</label>
-                                        <input  value="{{$data->pan_no }}"  type="text" class="form-control" placeholder="Enter PAN NO"
-                                            name=" pan_no">
+                                        <input value="{{ $data->pan_no }}" type="text" class="form-control"
+                                            placeholder="Enter PAN NO" name=" pan_no">
                                     </div>
 
                                     <div class="col-sm-4">
                                         <label> Adhar No:</label>
-                                        <input  value="{{$data->adhar_no }}"  type="number" class="form-control" placeholder="Enter Adhar No"
-                                            name=" adhar_no">
+                                        <input value="{{ $data->adhar_no }}" type="number" class="form-control"
+                                            placeholder="Enter Adhar No" name=" adhar_no">
                                     </div>
 
                                     <div class="col-sm-4">
                                         <label> Bank Name:</label>
-                                        <input  value="{{$data->bank_name }}"  type="text" class="form-control" placeholder="Enter Bank Name"
-                                            name=" bank_name">
+                                        <input value="{{ $data->bank_name }}" type="text" class="form-control"
+                                            placeholder="Enter Bank Name" name=" bank_name">
                                     </div>
 
 
@@ -164,7 +175,7 @@
 
                                     <div class="col-sm-8">
                                         <label>Address:</label>
-                                        <textarea class="form-control" name="address" placeholder="Enter Address">{{ $data->address}}</textarea>
+                                        <textarea class="form-control" name="address" placeholder="Enter Address">{{ $data->address }}</textarea>
                                     </div>
                                     <hr>
                                     <div class="col-md-12 p-2 text-center">

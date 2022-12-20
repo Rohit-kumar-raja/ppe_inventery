@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('designation_id');
             $table->unsignedBigInteger('area_id');
+            $table->unsignedBigInteger('store_id')->nullable();
             $table->string('empid');
             $table->string('name');
             $table->string('position');

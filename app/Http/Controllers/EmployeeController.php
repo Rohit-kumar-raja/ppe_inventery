@@ -6,14 +6,16 @@ use App\Models\Employee;
 use App\Http\Controllers\Controller;
 use App\Models\Area;
 use App\Models\Designation;
+use App\Models\Store;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
-   
+
     public function index($designation_id)
     {
         $employee = Employee::where('designation_id', $designation_id)->get();
+
         $designation_name = Designation::find($designation_id)->name;
         return view('/employee/index', ['employee' => $employee, 'page' => $designation_name, 'designation_id' => $designation_id]);
     }
@@ -27,10 +29,14 @@ class EmployeeController extends Controller
     {
         $designation_name = Designation::find($designation_id);
         $areas = Area::where('status', 1)->get();
+        $stores = Store::where('status', 1)->get();
+
         return view('employee.insert', [
             'page' => $designation_name->name,
             'designation_id' => $designation_id,
             'areas' => $areas,
+            'stores' => $stores,
+
 
         ]);
     }
@@ -38,9 +44,9 @@ class EmployeeController extends Controller
 
     public function store(Request $request)
     {
-        
+
         Employee::insert($request->except('_token'));
-        return redirect()->back()->with('save','Employee Added Successfully !!! ');
+        return redirect()->back()->with('save', 'Employee Added Successfully !!! ');
     }
 
 
@@ -48,17 +54,18 @@ class EmployeeController extends Controller
     {
 
         $employee = employee::where('id', $id)->first();
-        $page=Designation::find($employee->designation_id)->name;
+        $page = Designation::find($employee->designation_id)->name;
         $areas = Area::where('status', 1)->get();
-        return view('/employee/edit', ['data' => $employee,'page'=>$page,'designation_id'=>$employee->designation_id, 'areas' => $areas,]);
+        $stores = Store::where('status', 1)->get();
+        return view('/employee/edit', ['data' => $employee, 'page' => $page, 'designation_id' => $employee->designation_id, 'areas' => $areas, 'stores' => $stores]);
     }
 
 
     public function update(Request $request, $id)
     {
         $employee = employee::where('id', $id)->update($request->except('_token'));
-       
-        return redirect()->route('employee',$request->designation_id);
+
+        return redirect()->route('employee', $request->designation_id);
     }
 
     public function destroy($id)

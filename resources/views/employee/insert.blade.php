@@ -46,11 +46,20 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <label>Area:</label>
-                                        <!-- <input type="text" class="form-control"  placeholder="Enter Area" name=" area"> -->
                                         <select name="area_id" class="form-control">
                                             <option selected disabled>Select Area</option>
                                             @foreach ($areas as $area)
                                                 <option value="{{ $area->id }}">{{ $area->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <label>Store :</label>
+                                        <select name="store_id" class="form-control">
+                                            <option selected disabled>Select Store</option>
+                                            @foreach ($stores as $store)
+                                                <option value="{{ $store->id }}">{{ $store->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
