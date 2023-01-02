@@ -77,20 +77,12 @@
                                             <td>{{ $ppe_request->approved_by->name ?? '' }}</td>
                                             <td>{{ $ppe_request->approved_date }}</td>
                                             <td>{{ $ppe_request->description }}</td>
-                                            {{-- <td><a href="{{ route('ppe_request.status', $ppe_request->id) }}"
-                                                    class="btn @if ($ppe_request->status == 1) btn-success @endif btn-secondary  btn-sm">
-                                                    @if ($ppe_request->status == 1)
-                                                        Active
-                                                    @else
-                                                        Deactive
-                                                    @endif
-                                                </a>
-                                            </td> --}}
+                               
                                             <td>
                                                 <div class="d-flex align-items-center list-action text-center ">
-                                                    {{-- <a class="badge badge-info mr-2" data-toggle="modal"
+                                                    <a class="badge badge-info mr-2" data-toggle="modal" data-original-title="Edit"
                                                         data-target="#myModal_view{{ $ppe_request->id }}"><i
-                                                            class="fa fa-eye  mr-0"></i></a> --}}
+                                                            class="fa fa-eye  mr-0"></i></a>
                                                     <a class="badge bg-success mr-2" data-toggle="tooltip"
                                                         data-placement="top" title="" data-original-title="Edit"
                                                         href="{{ route('ppe_request.edit', $ppe_request->id) }}"><i
